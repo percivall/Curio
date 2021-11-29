@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, maximum-scale = 2.0, user-scalable = yes, width = device-width">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Otium Core</title>
+<style>
+<!--
+html {
+	height: 100%;
+}
+body {
+	background: #444;
+	background: radial-gradient(white, black);
+	background: -webkit-radial-gradient(white, black); /* kludge: for old Safari on Win */
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* Slide ------------------------- */
+#slide {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#slide td {
+	vertical-align: middle;
+	text-align: center;
+}
+#activeSlide {
+	border: none;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	image-rendering: auto;
+	
+}
+
+/* Navigation buttons ------------------------- */
+#navigation div {
+	position: fixed;
+	top: 5px;
+	height: 50px;
+	width: 50px;
+	border: 2px solid #000;
+	z-index: 100;
+	line-height: 50px;
+	text-align: center;
+	display: table-cell;
+	font-size: 36px;
+	background-color: #fff;
+	cursor: pointer;
+}
+#tocIcon {
+	left: 5px;
+}
+#previousIcon {
+	right: 60px;
+}
+#previousIcon:hover {
+	background-color: #999;
+}
+#nextIcon {
+	right: 5px;
+}
+#nextIcon:hover {
+	background-color: #999;
+}
+#previousIcon, #nextIcon {
+	font-size: 24px !important;
+}
+
+/* Table of Contents popup ------------------------- */
+#toc {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #e7eaf0;
+	width: 200px;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	border-right: 1px solid #929292;
+	z-index: 1000;
+}
+#toc ul {
+	margin: 0;
+	padding: 0;
+	font-family: HelveticaNeue, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 11px;
+	list-style-type: none;
+}
+#toc ul li {
+	margin: 8px;
+	white-space: nowrap;
+}
+#toc ul li a {
+	color: #000;
+	text-decoration: none;
+}
+#toc ul li a:hover {
+	color: #0A6DBF;
+	text-decoration: underline;
+}
+#toc ul li img {
+	margin-right: 5px;
+	vertical-align: middle;
+	border: none;
+	width: 50px;
+}
+-->
+</style>
+<script type="text/javascript">
+var isTouchDevice = 'ontouchstart' in document.documentElement;
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+var currentSlideIndex = 0;
+var projectTitle = "Otium Core";
+var slides = new Array();  
+var slideHierarchy = [
+		{
+			title: "Version 3 outline",
+			uuid: "7BE8CBAB-E5A1-4707-AC16-BCA4A332616D",
+			tags: [],
+			image: "Contents/Version%203%20outline-7be8cbab-e5a1-4707-ac16-bca4a332616d.png?nocache=659898061",
+			imageSize: { width: 1779.000000, height: 1487.000000 },
+			thumbnail: "Contents/Version%203%20outline-7be8cbab-e5a1-4707-ac16-bca4a332616d-Thumb.png?nocache=659898061",
+			imagemap: [
+				{
+					href: "evernote:///view/8220413/s75/54c573b2-4f8c-4443-7988-7faff21f08bb/54c573b2-4f8c-4443-7988-7faff21f08bb/",
+					tags: [],
+					shape: "polygon",
+					coords: "1017,176 1310,176 1310,219 1017,219",
+				},
+				{
+					href: "evernote:///view/8220413/s75/ec9ed4c8-ea46-337f-39b5-4d70b00c3848/ec9ed4c8-ea46-337f-39b5-4d70b00c3848/",
+					tags: [],
+					shape: "polygon",
+					coords: "996,70 1213,70 1213,99 996,99",
+				},
+				{
+					href: "evernote:///view/8220413/s75/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/",
+					tags: [],
+					shape: "polygon",
+					coords: "931,-6 1103,-6 1103,22 931,22",
+				},
+				{
+					href: "evernote:///view/8220413/s75/97f9b054-43e2-a858-c082-8525fbe29a37/97f9b054-43e2-a858-c082-8525fbe29a37/",
+					tags: [],
+					shape: "polygon",
+					coords: "813,258 1001,258 1001,285 813,285",
+				},
+				{
+					href: "evernote:///view/8220413/s75/8e7f6aff-37ea-4cae-bd25-320cae1d7fe4/8e7f6aff-37ea-4cae-bd25-320cae1d7fe4/",
+					tags: [],
+					shape: "polygon",
+					coords: "812,108 1039,108 1039,137 812,137",
+				}
+			]
+		},
+		{
+			title: "Version 2 outline",
+			uuid: "928546F3-02EC-437A-A672-E8276496FB43",
+			tags: [],
+			image: "Contents/Version%202%20outline-928546f3-02ec-437a-a672-e8276496fb43.png?nocache=659898061",
+			imageSize: { width: 1536.000000, height: 1214.000000 },
+			thumbnail: "Contents/Version%202%20outline-928546f3-02ec-437a-a672-e8276496fb43-Thumb.png?nocache=659898061",
+			imagemap: [
+				{
+					href: "evernote:///view/8220413/s75/54c573b2-4f8c-4443-7988-7faff21f08bb/54c573b2-4f8c-4443-7988-7faff21f08bb/",
+					tags: [],
+					shape: "polygon",
+					coords: "480,92 1045,92 1045,121 480,121",
+				}
+			]
+		},
+		{
+			title: "Version 1 outline",
+			uuid: "E95447F1-A422-4B7B-A335-6684B2AB788A",
+			tags: [],
+			image: "Contents/Version%201%20outline-e95447f1-a422-4b7b-a335-6684b2ab788a.png?nocache=659898061",
+			imageSize: { width: 1536.000000, height: 1214.000000 },
+			thumbnail: "Contents/Version%201%20outline-e95447f1-a422-4b7b-a335-6684b2ab788a-Thumb.png?nocache=659898061",
+			imagemap: [
+				{
+					href: "evernote:///view/8220413/s75/54c573b2-4f8c-4443-7988-7faff21f08bb/54c573b2-4f8c-4443-7988-7faff21f08bb/",
+					tags: [],
+					shape: "polygon",
+					coords: "480,92 1045,92 1045,121 480,121",
+				}
+			]
+		},
+		{
+			title: "Version 0 concepts",
+			uuid: "0B7B5358-A28D-47D1-A8E7-AB86E88FCA28",
+			tags: [],
+			image: "Contents/Version%200%20concepts-0b7b5358-a28d-47d1-a8e7-ab86e88fca28.png?nocache=659898061",
+			imageSize: { width: 848.000000, height: 544.000000 },
+			thumbnail: "Contents/Version%200%20concepts-0b7b5358-a28d-47d1-a8e7-ab86e88fca28-Thumb.png?nocache=659898061"
+		}
+	]
+;
+
+function loadTOC(elementToAddTo, slidesAtLevel) {
+	if (!slidesAtLevel)
+		return;
+		
+	var listElement = document.createElement("ul");
+	
+	for (var slideIndex = 0; slideIndex < slidesAtLevel.length; ++slideIndex) {
+		var title = slidesAtLevel[slideIndex].title;
+		var thumbnail = slidesAtLevel[slideIndex].thumbnail;
+		var image = slidesAtLevel[slideIndex].image;
+		var childHierarchy = slidesAtLevel[slideIndex].childHierarchy;
+
+		var listItemElement = document.createElement("li");
+		if (image) {
+			slides.push(slidesAtLevel[slideIndex]);
+
+			var anchorElement = document.createElement("a");
+			anchorElement.setAttribute("href", "javascript:goToSlideAtIndex("+((slides.length) - 1)+");");
+			var imageElement = document.createElement("img");
+			imageElement.setAttribute("src", thumbnail);
+			anchorElement.appendChild(imageElement);
+			anchorElement.appendChild(document.createTextNode(title));
+			listItemElement.appendChild(anchorElement);
+		}
+		else {
+			var imageElement = document.createElement("img");
+			imageElement.setAttribute("src", thumbnail);
+			listItemElement.appendChild(imageElement);
+			listItemElement.appendChild(document.createTextNode(title));
+		}	
+		loadTOC(listItemElement, childHierarchy);
+		listElement.appendChild(listItemElement);
+	}
+	
+	elementToAddTo.appendChild(listElement);
+}
+
+function show(id) {
+	document.getElementById(id).style.visibility = "visible";
+}
+function hide(id) {
+	document.getElementById(id).style.visibility = "hidden";
+}
+
+function showNavigation() {
+	document.getElementById('tocIcon').style.opacity = 0.5;
+	document.getElementById('tocIcon').style.filter = "alpha(opacity=50)";
+	document.getElementById('previousIcon').style.opacity = 0.5;
+	document.getElementById('previousIcon').style.filter = "alpha(opacity=50)";
+	document.getElementById('nextIcon').style.opacity = 0.5;
+	document.getElementById('nextIcon').style.filter = "alpha(opacity=50)";
+}
+function hideNavigation() {
+	document.getElementById('tocIcon').style.opacity = 0;
+	document.getElementById('tocIcon').style.filter = "alpha(opacity=0)";
+	document.getElementById('previousIcon').style.opacity = 0;
+	document.getElementById('previousIcon').style.filter = "alpha(opacity=0)";
+	document.getElementById('nextIcon').style.opacity = 0;
+	document.getElementById('nextIcon').style.filter = "alpha(opacity=0)";
+}
+
+var showNavigationTimeout = null;
+
+function goToSlideAtIndex(slideIndex, silent) {
+	currentSlideIndex = slideIndex;
+	
+	document.getElementById("activeSlide").src = slides[slideIndex].image;
+	if (slides[slideIndex].imageSize) {
+		document.getElementById("activeSlide").width = slides[slideIndex].imageSize.width;
+		document.getElementById("activeSlide").height = slides[slideIndex].imageSize.height;
+	}
+
+	var title = slides[slideIndex].title;
+	window.document.title = projectTitle + " \u2014 " + title;
+	
+	var imagemap = slides[slideIndex].imagemap;
+	var mapElement = document.getElementById("activeSlideMap");
+	while (mapElement.firstChild) {
+		mapElement.removeChild(mapElement.firstChild);
+	}
+	if (imagemap) {
+		for (var imagemapIndex = 0; imagemapIndex < imagemap.length; ++imagemapIndex) {
+			var href = imagemap[imagemapIndex].href;
+			var shape = imagemap[imagemapIndex].shape;
+			var coords = imagemap[imagemapIndex].coords;
+			var areaElement = document.createElement("area");
+			areaElement.setAttribute("href", href);
+			areaElement.setAttribute("coords", coords);
+			areaElement.setAttribute("shape", shape);
+			mapElement.appendChild(areaElement);
+		}
+	}
+
+	if (currentSlideIndex == 0) {
+		hide('previousIcon');
+	}
+	else {
+		show('previousIcon');
+	}
+
+	if (currentSlideIndex+1 == slides.length) {
+		hide('nextIcon');
+	}
+	else {
+		show('nextIcon');
+	}
+
+	// kludge: force the hover color to go away on touch devices
+	if (isTouchDevice) {
+		document.getElementById('previousIcon').style.backgroundColor = "#fff";
+		document.getElementById('nextIcon').style.backgroundColor = "#fff";
+	}
+
+	if (!silent) {
+		if (history.pushState) {
+			if (slideIndex == 0)
+				history.pushState(null, document.title, window.location.pathname + window.location.search);
+			else
+				history.pushState(null, document.title, '#'+slideIndex);
+		}
+		else {
+			location.hash = '#'+slideIndex;
+		}
+	}
+	
+	clearTimeout(showNavigationTimeout);
+	showNavigation();
+	showNavigationTimeout = setTimeout('hideNavigation()', 3000);
+}
+function goToFirstSlide() {
+	goToSlideAtIndex(0);
+}
+function goToLastSlide() {
+	if (slides.length > 0) {
+		goToSlideAtIndex(slides.length - 1);
+	}
+}
+function goToPreviousSlide() {
+	if (currentSlideIndex > 0) {
+		goToSlideAtIndex(currentSlideIndex-1);
+	}
+}
+function goToNextSlide() {
+	if (currentSlideIndex+1 < slides.length) {
+		goToSlideAtIndex(currentSlideIndex+1);
+	}
+}
+function goToSlideWithUUID(uuid) {
+	for (var slideIndex = 0; slideIndex < slides.length; ++slideIndex) {
+		if (slides[slideIndex].uuid == uuid) {
+			goToSlideAtIndex(slideIndex);
+			break;
+		}
+	}
+}
+
+window.onpopstate = function(event) {
+	var indexFromHash = window.location.hash.replace('#', '');
+	if (indexFromHash)
+		currentSlideIndex = parseInt(indexFromHash);
+	else
+		currentSlideIndex = 0;
+	goToSlideAtIndex(currentSlideIndex, true);
+};
+
+window.onload = function () {
+	loadTOC(document.getElementById("toc"), slideHierarchy);
+
+	var indexFromHash = window.location.hash.replace('#', '');
+	if (indexFromHash)
+		currentSlideIndex = parseInt(indexFromHash);
+	goToSlideAtIndex(currentSlideIndex);
+	
+	var autoHideTOC = true;
+	if (isSafari && !isTouchDevice) // kludge: with Safari on the Mac we have to briefly show the TOC for TOC scrolling to work
+		autoHideTOC = false;
+	if (autoHideTOC)
+		hide('toc');
+
+	document.getElementById('tocIcon').onmouseover=function(){
+		show('toc');
+	};
+	document.getElementById('slide').onmouseover=function(){
+		hide('toc');
+	};
+	document.getElementById('previousIcon').onmousedown=function(){
+		goToPreviousSlide();
+	};
+	document.getElementById('nextIcon').onmousedown=function(){
+		goToNextSlide();
+	};
+
+	document.getElementById('slide').onmousemove=function(){
+		clearTimeout(showNavigationTimeout);
+		showNavigation();
+		showNavigationTimeout = setTimeout('hideNavigation()', 2000);
+	};
+	document.getElementById('navigation').onmousemove=function(){
+		clearTimeout(showNavigationTimeout);
+		showNavigation();
+	};
+	document.getElementById('navigation').onmouseout=function(){
+		clearTimeout(showNavigationTimeout);
+		hideNavigation();
+	};
+	
+	if (slides.length <= 1) {
+		hide('toc');
+		hide('tocIcon');
+		hide('previousIcon');
+		hide('nextIcon');
+	}
+
+	document.onkeydown = function(event) {
+		event = event || window.event;
+		if (event.keyCode == '37' || event.keyCode == '38') // left or up
+			goToPreviousSlide();
+	    else if (event.keyCode == '39' || event.keyCode == '40') // right or down
+			goToNextSlide();
+	};
+}
+</script> 
+</head> 
+<body>
+	<table id="slide">
+		<tr>
+			<td>
+				<img id="activeSlide" usemap="#activeSlideMap" />
+				<map id="activeSlideMap" name="activeSlideMap"></map>
+			</td>
+		</tr>
+	</table>
+	<div id="navigation">
+		<div id="tocIcon">&#9776;</div>
+		<div id="previousIcon">&#9650;</div>
+		<div id="nextIcon">&#9660;</div>
+	</div>
+	<div id="toc"></div>
+</body>
+</html>
