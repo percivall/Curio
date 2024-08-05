@@ -1,0 +1,4156 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0, maximum-scale = 2.0, user-scalable = yes, width = device-width">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Otium Core</title>
+<style>
+<!--
+html {
+	height: 100%;
+}
+body {
+	background: #444;
+	background: radial-gradient(white, black);
+	background: -webkit-radial-gradient(white, black); /* kludge: for old Safari on Win */
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* Slide ------------------------- */
+#slide {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#slide td {
+	vertical-align: middle;
+	text-align: center;
+}
+#activeSlide {
+	border: none;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+	image-rendering: auto;
+	
+}
+
+/* Navigation buttons ------------------------- */
+#navigation div {
+	position: fixed;
+	top: 5px;
+	height: 50px;
+	width: 50px;
+	border: 2px solid #000;
+	z-index: 100;
+	line-height: 50px;
+	text-align: center;
+	display: table-cell;
+	font-size: 36px;
+	background-color: #fff;
+	cursor: pointer;
+}
+#tocIcon {
+	left: 5px;
+}
+#previousIcon {
+	right: 60px;
+}
+#previousIcon:hover {
+	background-color: #999;
+}
+#nextIcon {
+	right: 5px;
+}
+#nextIcon:hover {
+	background-color: #999;
+}
+#previousIcon, #nextIcon {
+	font-size: 24px !important;
+}
+
+/* Table of Contents popup ------------------------- */
+#toc {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #e7eaf0;
+	width: 200px;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	border-right: 1px solid #929292;
+	z-index: 1000;
+}
+#toc ul {
+	margin: 0;
+	padding: 0;
+	font-family: HelveticaNeue, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 11px;
+	list-style-type: none;
+}
+#toc ul li {
+	margin: 8px;
+	white-space: nowrap;
+}
+#toc ul li a {
+	color: #000;
+	text-decoration: none;
+}
+#toc ul li a:hover {
+	color: #0A6DBF;
+	text-decoration: underline;
+}
+#toc ul li img {
+	margin-right: 5px;
+	vertical-align: middle;
+	border: none;
+	width: 50px;
+}
+-->
+</style>
+<script type="text/javascript">
+var isTouchDevice = 'ontouchstart' in document.documentElement;
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+var currentSlideIndex = 0;
+var projectTitle = "Otium Core";
+var slides = new Array();  
+var slideHierarchy = [
+		{
+			title: "Top level outline v5",
+			uuid: "5C59A6C0-A7A7-4002-9174-100D3FCECE3D",
+			tags: [],
+			image: "Contents/Top%20level%20outline%20v5-5c59a6c0-a7a7-4002-9174-100d3fcece3d.png?nocache=744593444",
+			imageSize: { width: 1224.000000, height: 959.000000 },
+			thumbnail: "Contents/Top%20level%20outline%20v5-5c59a6c0-a7a7-4002-9174-100d3fcece3d-Thumb.png?nocache=744593444",
+			imagemap: [
+				{
+					href: "javascript:goToSlideWithUUID('EC283BFA-DDF3-463C-8809-BAD7A94A5D45')",
+					tags: [],
+					shape: "polygon",
+					coords: "302,93 616,93 616,132 302,132",
+				},
+				{
+					href: "evernote:///view/8220413/s75/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/",
+					tags: [],
+					shape: "polygon",
+					coords: "1066,97 1238,97 1238,126 1066,126",
+				},
+				{
+					href: "evernote:///view/8220413/s75/8e7f6aff-37ea-4cae-bd25-320cae1d7fe4/8e7f6aff-37ea-4cae-bd25-320cae1d7fe4/",
+					tags: [],
+					shape: "polygon",
+					coords: "829,78 1028,78 1028,105 829,105",
+				},
+				{
+					href: "evernote:///view/8220413/s75/ec9ed4c8-ea46-337f-39b5-4d70b00c3848/ec9ed4c8-ea46-337f-39b5-4d70b00c3848/",
+					tags: [],
+					shape: "polygon",
+					coords: "1013,87 1230,87 1230,116 1013,116",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('CEE75394-79AB-42D9-9AE0-77314FC5BA75')",
+					tags: [],
+					shape: "polygon",
+					coords: "302,834 736,834 736,873 302,873",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('564D5FC4-0DB1-4693-8560-33E753527CAD')",
+					tags: [],
+					shape: "polygon",
+					coords: "302,253 670,253 670,320 302,320",
+				},
+				{
+					href: "evernote:///view/8220413/s75/cf16014b-56d0-4859-e3b9-5fb921c2c871/cf16014b-56d0-4859-e3b9-5fb921c2c871/",
+					tags: [],
+					shape: "polygon",
+					coords: "1041,245 1257,245 1257,272 1041,272",
+				},
+				{
+					href: "evernote:///view/8220413/s75/baf26740-bd6a-8fe1-f52e-d6760486276a/baf26740-bd6a-8fe1-f52e-d6760486276a/",
+					tags: [],
+					shape: "polygon",
+					coords: "1109,282 1240,282 1240,309 1109,309",
+				},
+				{
+					href: "evernote:///view/8220413/s75/a5d02141-f515-45a7-84e4-984767a0ca46/a5d02141-f515-45a7-84e4-984767a0ca46/",
+					tags: [],
+					shape: "polygon",
+					coords: "1109,319 1264,319 1264,346 1109,346",
+				},
+				{
+					href: "evernote:///view/8220413/s75/b8f540f4-51ea-4c42-9324-9834e5c6c05c/b8f540f4-51ea-4c42-9324-9834e5c6c05c/",
+					tags: [],
+					shape: "polygon",
+					coords: "945,356 1141,356 1141,383 945,383",
+				},
+				{
+					href: "evernote:///view/8220413/s75/e9cd9ea5-90a5-4138-a516-a6843fc95910/e9cd9ea5-90a5-4138-a516-a6843fc95910/",
+					tags: [],
+					shape: "polygon",
+					coords: "1171,356 1316,356 1316,383 1171,383",
+				},
+				{
+					href: "evernote:///view/8220413/s75/6818a7aa-5d0e-3871-4140-a0ba852fc6d0/6818a7aa-5d0e-3871-4140-a0ba852fc6d0/",
+					tags: [],
+					shape: "polygon",
+					coords: "1146,393 1374,393 1374,420 1146,420",
+				},
+				{
+					href: "evernote:///view/8220413/s75/13cadda7-aed0-bdce-e853-ffb89ab2f088/13cadda7-aed0-bdce-e853-ffb89ab2f088/",
+					tags: [],
+					shape: "polygon",
+					coords: "1146,403 1428,403 1428,430 1146,430",
+				},
+				{
+					href: "evernote:///view/8220413/s75/caefe920-299f-4047-85c9-4cb06542290c/caefe920-299f-4047-85c9-4cb06542290c/",
+					tags: [],
+					shape: "polygon",
+					coords: "1146,413 1320,413 1320,440 1146,440",
+				},
+				{
+					href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+					tags: [],
+					shape: "polygon",
+					coords: "1041,430 1321,430 1321,457 1041,457",
+				},
+				{
+					href: "evernote:///view/8220413/s75/20859bf0-14a9-4bf3-8f53-96567eeb517c/20859bf0-14a9-4bf3-8f53-96567eeb517c/",
+					tags: [],
+					shape: "polygon",
+					coords: "1423,286 1614,286 1614,313 1423,313",
+				},
+				{
+					href: "evernote:///view/8220413/s75/cdef9d53-edea-4644-aee9-d355caa49158/cdef9d53-edea-4644-aee9-d355caa49158/",
+					tags: [],
+					shape: "polygon",
+					coords: "1423,323 1778,323 1778,350 1423,350",
+				},
+				{
+					href: "evernote:///view/8220413/s75/cf33a302-0ff9-4e97-9675-ad01329a20eb/cf33a302-0ff9-4e97-9675-ad01329a20eb/",
+					tags: [],
+					shape: "polygon",
+					coords: "1808,343 2004,343 2004,370 1808,370",
+				},
+				{
+					href: "evernote:///view/8220413/s75/e5859d9c-6629-403d-a69a-f37aac0bf253/e5859d9c-6629-403d-a69a-f37aac0bf253/",
+					tags: [],
+					shape: "polygon",
+					coords: "2034,343 2382,343 2382,370 2034,370",
+				},
+				{
+					href: "evernote:///view/8220413/s75/24137d78-95b9-4354-beba-362c8bfad9fc/24137d78-95b9-4354-beba-362c8bfad9fc/",
+					tags: [],
+					shape: "polygon",
+					coords: "1808,353 1994,353 1994,380 1808,380",
+				},
+				{
+					href: "evernote:///view/8220413/s75/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/",
+					tags: [],
+					shape: "polygon",
+					coords: "2024,353 2288,353 2288,380 2024,380",
+				},
+				{
+					href: "evernote:///view/8220413/s75/202801ef-20e0-4aa6-831b-df6025134068/202801ef-20e0-4aa6-831b-df6025134068/",
+					tags: [],
+					shape: "polygon",
+					coords: "1423,600 1779,600 1779,627 1423,627",
+				},
+				{
+					href: "evernote:///view/8220413/s75/5e0a0618-5b0f-4e57-9836-1a719a2f7399/5e0a0618-5b0f-4e57-9836-1a719a2f7399/",
+					tags: [],
+					shape: "polygon",
+					coords: "1809,549 1971,549 1971,576 1809,576",
+				},
+				{
+					href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+					tags: [],
+					shape: "polygon",
+					coords: "1809,733 1950,733 1950,760 1809,760",
+				},
+				{
+					href: "evernote:///view/8220413/s75/74a002a6-ae6f-4e41-bfeb-c38834729394/74a002a6-ae6f-4e41-bfeb-c38834729394/",
+					tags: [],
+					shape: "polygon",
+					coords: "1185,876 1407,876 1407,903 1185,903",
+				},
+				{
+					href: "evernote:///view/8220413/s75/a45ef130-7878-4010-b600-04737db3c07a/a45ef130-7878-4010-b600-04737db3c07a/",
+					tags: [],
+					shape: "polygon",
+					coords: "1437,876 1796,876 1796,903 1437,903",
+				},
+				{
+					href: "evernote:///view/8220413/s75/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/",
+					tags: [],
+					shape: "polygon",
+					coords: "1437,886 1681,886 1681,913 1437,913",
+				},
+				{
+					href: "evernote:///view/8220413/s75/dc2c2b6d-7619-0cd5-1438-2e5237762b65/dc2c2b6d-7619-0cd5-1438-2e5237762b65/",
+					tags: [],
+					shape: "polygon",
+					coords: "1711,886 1948,886 1948,913 1711,913",
+				},
+				{
+					href: "evernote:///view/8220413/s75/340b3b8c-80ad-9629-f742-1a47538d927e/340b3b8c-80ad-9629-f742-1a47538d927e/",
+					tags: [],
+					shape: "polygon",
+					coords: "1437,896 1806,896 1806,923 1437,923",
+				},
+				{
+					href: "evernote:///view/8220413/s75/195ae449-747a-4b90-9373-4336da624700/195ae449-747a-4b90-9373-4336da624700/",
+					tags: [],
+					shape: "polygon",
+					coords: "1692,913 2019,913 2019,940 1692,940",
+				},
+				{
+					href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+					tags: [],
+					shape: "polygon",
+					coords: "1692,923 1972,923 1972,950 1692,950",
+				},
+				{
+					href: "evernote:///view/8220413/s75/f3ade69a-984c-4946-95dd-96239d8faf03/f3ade69a-984c-4946-95dd-96239d8faf03/",
+					tags: [],
+					shape: "polygon",
+					coords: "1692,933 1917,933 1917,960 1692,960",
+				},
+				{
+					href: "evernote:///view/8220413/s75/e4fc5d93-a815-46a0-aa06-2c3d5364a407/e4fc5d93-a815-46a0-aa06-2c3d5364a407/",
+					tags: [],
+					shape: "polygon",
+					coords: "1692,943 1932,943 1932,970 1692,970",
+				},
+				{
+					href: "evernote:///view/8220413/s75/02141750-aeee-4bfb-83bc-4a8b0c7dc487/02141750-aeee-4bfb-83bc-4a8b0c7dc487/",
+					tags: [],
+					shape: "polygon",
+					coords: "1470,923 1681,923 1681,950 1470,950",
+				},
+				{
+					href: "evernote:///view/8220413/s75/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/",
+					tags: [],
+					shape: "polygon",
+					coords: "1711,923 1981,923 1981,950 1711,950",
+				},
+				{
+					href: "evernote:///view/8220413/s75/788ed54e-3cca-4918-b6c3-5e5d78b42878/788ed54e-3cca-4918-b6c3-5e5d78b42878/",
+					tags: [],
+					shape: "polygon",
+					coords: "1711,933 1910,933 1910,960 1711,960",
+				},
+				{
+					href: "evernote:///view/8220413/s75/c205d82a-9fac-48c5-8ca4-49d70912240c/c205d82a-9fac-48c5-8ca4-49d70912240c/",
+					tags: [],
+					shape: "polygon",
+					coords: "1711,943 1965,943 1965,970 1711,970",
+				},
+				{
+					href: "evernote:///view/8220413/s75/85711e51-a4e7-01d5-241c-7b340905e96c/85711e51-a4e7-01d5-241c-7b340905e96c/",
+					tags: [],
+					shape: "polygon",
+					coords: "1711,953 1970,953 1970,980 1711,980",
+				},
+				{
+					href: "evernote:///view/8220413/s75/bfefd30f-5c93-470c-8e0a-79482fab62be/bfefd30f-5c93-470c-8e0a-79482fab62be/",
+					tags: [],
+					shape: "polygon",
+					coords: "1711,963 1948,963 1948,990 1711,990",
+				},
+				{
+					href: "evernote:///view/8220413/s75/5665e21e-d780-4abb-a925-5cd443b32772/5665e21e-d780-4abb-a925-5cd443b32772/",
+					tags: [],
+					shape: "polygon",
+					coords: "1470,933 1684,933 1684,960 1470,960",
+				},
+				{
+					href: "evernote:///view/8220413/s75/003f8cb4-e24e-442a-8d2b-ce83b1afec41/003f8cb4-e24e-442a-8d2b-ce83b1afec41/",
+					tags: [],
+					shape: "polygon",
+					coords: "1281,950 1516,950 1516,977 1281,977",
+				},
+				{
+					href: "evernote:///view/8220413/s75/4caa70b7-4136-4277-b03d-723bd6594a98/4caa70b7-4136-4277-b03d-723bd6594a98/",
+					tags: [],
+					shape: "polygon",
+					coords: "1281,960 1479,960 1479,987 1281,987",
+				},
+				{
+					href: "evernote:///view/8220413/s75/406f747f-0436-d8bb-94ce-8d6faf8740f8/406f747f-0436-d8bb-94ce-8d6faf8740f8/",
+					tags: [],
+					shape: "polygon",
+					coords: "1281,970 1799,970 1799,997 1281,997",
+				},
+				{
+					href: "evernote:///view/8220413/s75/eda7e31d-12c8-44b1-921d-045e1c5edb38/eda7e31d-12c8-44b1-921d-045e1c5edb38/",
+					tags: [],
+					shape: "polygon",
+					coords: "1660,987 1969,987 1969,1014 1660,1014",
+				},
+				{
+					href: "evernote:///view/8220413/s75/7790efcb-f9bf-797e-add2-ba759891fc1c/7790efcb-f9bf-797e-add2-ba759891fc1c/",
+					tags: [],
+					shape: "polygon",
+					coords: "1999,987 2417,987 2417,1014 1999,1014",
+				},
+				{
+					href: "evernote:///view/8220413/s75/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/",
+					tags: [],
+					shape: "polygon",
+					coords: "1660,1024 1925,1024 1925,1051 1660,1051",
+				},
+				{
+					href: "evernote:///view/8220413/s75/609006d3-829b-4103-b1c9-2e691c5cb938/609006d3-829b-4103-b1c9-2e691c5cb938/",
+					tags: [],
+					shape: "polygon",
+					coords: "1541,1173 1810,1173 1810,1200 1541,1200",
+				},
+				{
+					href: "evernote:///view/8220413/s75/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/",
+					tags: [],
+					shape: "polygon",
+					coords: "1702,1322 1987,1322 1987,1349 1702,1349",
+				},
+				{
+					href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+					tags: [],
+					shape: "polygon",
+					coords: "1702,1332 1843,1332 1843,1359 1702,1359",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('7216E17B-90E2-4938-B44D-A7A1AA496A19')",
+					tags: [],
+					shape: "polygon",
+					coords: "844,364 1056,364 1056,393 844,393",
+				},
+				{
+					href: "evernote:///view/8220413/s75/bbad8e98-84fd-52fc-2a89-1976ee5f0ca1/bbad8e98-84fd-52fc-2a89-1976ee5f0ca1/",
+					tags: [],
+					shape: "polygon",
+					coords: "883,201 1138,201 1138,228 883,228",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('284E1226-4C93-4CC7-8E81-8D66A41BD4E3')",
+					tags: [],
+					shape: "polygon",
+					coords: "302,448 670,448 670,515 302,515",
+				},
+				{
+					href: "evernote:///view/8220413/s75/76faa747-f95a-2c2d-19a4-d1225be85db6/76faa747-f95a-2c2d-19a4-d1225be85db6/",
+					tags: [],
+					shape: "polygon",
+					coords: "857,406 1186,406 1186,433 857,433",
+				},
+				{
+					href: "evernote:///view/8220413/s75/bfc0ede0-eee3-484f-90b5-b2e2b2bab87a/bfc0ede0-eee3-484f-90b5-b2e2b2bab87a/",
+					tags: [],
+					shape: "polygon",
+					coords: "857,426 1146,426 1146,453 857,453",
+				},
+				{
+					href: "evernote:///view/8220413/s75/0e13f721-9fb7-a721-505c-0ce32da0a75b/0e13f721-9fb7-a721-505c-0ce32da0a75b/",
+					tags: [],
+					shape: "polygon",
+					coords: "857,436 1267,436 1267,463 857,463",
+				},
+				{
+					href: "evernote:///view/8220413/s75/240d80e5-45da-4814-bb43-888f2e5d46aa/240d80e5-45da-4814-bb43-888f2e5d46aa/",
+					tags: [],
+					shape: "polygon",
+					coords: "857,456 1381,456 1381,483 857,483",
+				},
+				{
+					href: "evernote:///view/8220413/s75/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/",
+					tags: [],
+					shape: "polygon",
+					coords: "897,460 1090,460 1090,487 897,487",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+					tags: [],
+					shape: "polygon",
+					coords: "897,497 1101,497 1101,526 897,526",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+					tags: [],
+					shape: "polygon",
+					coords: "897,536 1032,536 1032,565 897,565",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+					tags: [],
+					shape: "polygon",
+					coords: "897,649 1141,649 1141,678 897,678",
+				},
+				{
+					href: "evernote:///view/8220413/s75/47b9393d-0187-bfcb-fe08-f7d4922aa1f7/47b9393d-0187-bfcb-fe08-f7d4922aa1f7/",
+					tags: [],
+					shape: "polygon",
+					coords: "904,498 1215,498 1215,525 904,525",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('6C25561E-E569-4C08-B1F0-A46AFA28D8B8')",
+					tags: [],
+					shape: "polygon",
+					coords: "904,507 1192,507 1192,536 904,536",
+				},
+				{
+					href: "evernote:///view/8220413/s75/f4516c3d-1120-0db3-6eeb-932cadd45ddc/f4516c3d-1120-0db3-6eeb-932cadd45ddc/",
+					tags: [],
+					shape: "polygon",
+					coords: "1074,518 1259,518 1259,545 1074,545",
+				},
+				{
+					href: "evernote:///view/8220413/s75/3587efd9-4ff1-f34b-daf8-f2208deea95f/3587efd9-4ff1-f34b-daf8-f2208deea95f/",
+					tags: [],
+					shape: "polygon",
+					coords: "1278,539 1549,539 1549,566 1278,566",
+				},
+				{
+					href: "evernote:///view/8220413/s75/281b908a-096d-42ed-a350-3f908734bea8/281b908a-096d-42ed-a350-3f908734bea8/",
+					tags: [],
+					shape: "polygon",
+					coords: "1278,549 1557,549 1557,576 1278,576",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('55974A27-C6AE-487F-AD91-6F0E39D26C60')",
+					tags: [],
+					shape: "polygon",
+					coords: "766,838 900,838 900,869 766,869",
+				},
+				{
+					href: "javascript:goToSlideWithUUID('4B7FE594-D934-45C6-9DB6-741BD8AF9E50')",
+					tags: [],
+					shape: "polygon",
+					coords: "302,663 688,663 688,730 302,730",
+				}
+			]
+		},
+		{
+			title: "1. The Objective",
+			uuid: "D5C9E65F-2F3C-4E84-8030-708C5EEF9BA8",
+			tags: [],
+			thumbnail: "Contents/Folderd5-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "1. The Objective outline",
+					uuid: "EC283BFA-DDF3-463C-8809-BAD7A94A5D45",
+					tags: [],
+					image: "Contents/1.%20The%20Objective%20out-ec283bfa-ddf3-463c-8809-bad7a94a5d45.png?nocache=744593444",
+					imageSize: { width: 1481.000000, height: 1106.000000 },
+					thumbnail: "Contents/1.%20The%20Objective%20out-ec283bfa-ddf3-463c-8809-bad7a94a5d45-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,523 306,523 306,573 56,573",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5e17e226-f551-48f8-9ae2-2b9f0649fef2/5e17e226-f551-48f8-9ae2-2b9f0649fef2/",
+							tags: [],
+							shape: "polygon",
+							coords: "833,678 1095,678 1095,705 833,705",
+						},
+						{
+							href: "evernote:///view/8220413/s75/97f9b054-43e2-a858-c082-8525fbe29a37/97f9b054-43e2-a858-c082-8525fbe29a37/",
+							tags: [],
+							shape: "polygon",
+							coords: "583,883 755,883 755,910 583,910",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7511a42a-d1b4-43d1-8adb-371223579b13/7511a42a-d1b4-43d1-8adb-371223579b13/",
+							tags: [],
+							shape: "polygon",
+							coords: "602,957 732,957 732,984 602,984",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cf462694-7cda-a2be-f435-cb70d4152dd2/cf462694-7cda-a2be-f435-cb70d4152dd2/",
+							tags: [],
+							shape: "polygon",
+							coords: "583,920 855,920 855,947 583,947",
+						},
+						{
+							href: "evernote:///view/8220413/s75/54c573b2-4f8c-4443-7988-7faff21f08bb/54c573b2-4f8c-4443-7988-7faff21f08bb/",
+							tags: [],
+							shape: "polygon",
+							coords: "689,754 1122,754 1122,783 689,783",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f445efbd-251a-4597-86ea-1b18920cd936/f445efbd-251a-4597-86ea-1b18920cd936/",
+							tags: [],
+							shape: "polygon",
+							coords: "650,132 836,132 836,159 650,159",
+						},
+						{
+							href: "evernote:///view/8220413/s75/51b4d776-7585-464d-ba99-c305412a2521/51b4d776-7585-464d-ba99-c305412a2521/",
+							tags: [],
+							shape: "polygon",
+							coords: "650,169 1045,169 1045,196 650,196",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dde40b0d-14f6-465e-aec8-07e52536e2d7/dde40b0d-14f6-465e-aec8-07e52536e2d7/",
+							tags: [],
+							shape: "polygon",
+							coords: "650,206 932,206 932,233 650,233",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7768b1fc-c53d-4639-8473-85e1cb518e67/7768b1fc-c53d-4639-8473-85e1cb518e67/",
+							tags: [],
+							shape: "polygon",
+							coords: "650,243 824,243 824,270 650,270",
+						},
+						{
+							href: "evernote:///view/8220413/s75/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/",
+							tags: [],
+							shape: "polygon",
+							coords: "747,391 875,391 875,418 747,418",
+						},
+						{
+							href: "Documents/1.1%20Seeking%20to%20know-7699012e-771a-4f3c-bf76-263f3b30db51/1.1%20Seeking%20to%20know.pdf",
+							tags: [],
+							shape: "polygon",
+							coords: "484,467 623,467 623,494 484,494",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+							tags: [],
+							shape: "polygon",
+							coords: "1169,78 1412,78 1412,107 1169,107",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('75F614FC-65E1-42F4-8C91-A6F239E3C66C')",
+							tags: [],
+							shape: "polygon",
+							coords: "598,428 879,428 879,457 598,457",
+						},
+						{
+							href: "evernote:///view/8220413/s75/2c2ee43d-ea61-c394-c7f1-18d2297f29d0/2c2ee43d-ea61-c394-c7f1-18d2297f29d0/",
+							tags: [],
+							shape: "polygon",
+							coords: "906,280 1167,280 1167,307 906,307",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('D1E1ACED-F30C-499D-97B1-0E7DF14802C1')",
+							tags: [],
+							shape: "polygon",
+							coords: "615,715 894,715 894,744 615,744",
+						}
+					]
+				},
+				{
+					title: "1.1 Seeking to know",
+					uuid: "348C2667-21BE-4A4A-A6B6-C6358E3B633F",
+					tags: [],
+					thumbnail: "Contents/Folder34-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "1.1 Seeking to know",
+							uuid: "8A8CA877-A132-4C6B-B696-911A02676F2D",
+							tags: [],
+							image: "Contents/1.1%20Seeking%20to%20know-8a8ca877-a132-4c6b-b696-911a02676f2d.png?nocache=744593444",
+							imageSize: { width: 0.000000, height: 0.000000 },
+							thumbnail: "Contents/1.1%20Seeking%20to%20know-8a8ca877-a132-4c6b-b696-911a02676f2d-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "Lucretius: outline",
+							uuid: "D70F3099-1165-465E-ABE7-85C0FB891990",
+							tags: [],
+							image: "Contents/Lucretius%20outline-d70f3099-1165-465e-abe7-85c0fb891990.png?nocache=744593444",
+							imageSize: { width: 1235.000000, height: 1090.000000 },
+							thumbnail: "Contents/Lucretius%20outline-d70f3099-1165-465e-abe7-85c0fb891990-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "Lucretius: Themes",
+							uuid: "32CC6256-6900-4468-9780-C2A0FE822555",
+							tags: [],
+							image: "Contents/Lucretius%20Themes-32cc6256-6900-4468-9780-c2a0fe822555.png?nocache=744593444",
+							imageSize: { width: 1246.000000, height: 7041.000000 },
+							thumbnail: "Contents/Lucretius%20Themes-32cc6256-6900-4468-9780-c2a0fe822555-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "Hume Treatise of Human Nature Book 1",
+							uuid: "75F614FC-65E1-42F4-8C91-A6F239E3C66C",
+							tags: [],
+							image: "Contents/Hume%20Treatise%20of%20Hum-75f614fc-65e1-42f4-8c91-a6f239e3c66c.png?nocache=744593444",
+							imageSize: { width: 2647.000000, height: 3465.000000 },
+							thumbnail: "Contents/Hume%20Treatise%20of%20Hum-75f614fc-65e1-42f4-8c91-a6f239e3c66c-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('4B7FE594-D934-45C6-9DB6-741BD8AF9E50')",
+									tags: [],
+									shape: "polygon",
+									coords: "744,1657 1018,1657 1018,1700 744,1700",
+								}
+							]
+						},
+						{
+							title: "1.1 Seeking to know",
+							uuid: "66DAC931-7071-44A9-9951-8DB1C88D414E",
+							tags: [],
+							image: "Contents/1.1%20Seeking%20to%20know-66dac931-7071-44a9-9951-8db1c88d414e.png?nocache=744593444",
+							imageSize: { width: 0.000000, height: 0.000000 },
+							thumbnail: "Contents/1.1%20Seeking%20to%20know-66dac931-7071-44a9-9951-8db1c88d414e-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "1.1 Seeking to know",
+							uuid: "F96F49BE-ABF7-41F5-8E90-E4CEE9B6F5FE",
+							tags: [],
+							image: "Contents/1.1%20Seeking%20to%20know-f96f49be-abf7-41f5-8e90-e4cee9b6f5fe.png?nocache=744593444",
+							imageSize: { width: 0.000000, height: 0.000000 },
+							thumbnail: "Contents/1.1%20Seeking%20to%20know-f96f49be-abf7-41f5-8e90-e4cee9b6f5fe-Thumb.png?nocache=744593444"
+						}
+					]
+				},
+				{
+					title: "1.2 Methods to know",
+					uuid: "15C3880C-AD56-49F6-9662-0A90BD082C91",
+					tags: [],
+					thumbnail: "Contents/Folder15-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "1.2Methods to know",
+							uuid: "DD6A3952-373B-4FE6-8EA4-C53B6DE7248F",
+							tags: [],
+							image: "Contents/1.2Methods%20to%20know-dd6a3952-373b-4fe6-8ea4-c53b6de7248f.png?nocache=744593444",
+							imageSize: { width: 0.000000, height: 0.000000 },
+							thumbnail: "Contents/1.2Methods%20to%20know-dd6a3952-373b-4fe6-8ea4-c53b6de7248f-Thumb.png?nocache=744593444"
+						}
+					]
+				},
+				{
+					title: "1.3 objectives",
+					uuid: "F5271FAB-4646-4FBC-8291-E8D24A6FBE36",
+					tags: [],
+					thumbnail: "Contents/Folderf5-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "1.3 What I want to know in this investigation",
+							uuid: "8A6EFCBE-4763-4B92-B5F0-586AB50B72DF",
+							tags: [],
+							image: "Contents/1.3%20What%20I%20want%20to%20k-8a6efcbe-4763-4b92-b5f0-586ab50b72df.png?nocache=744593444",
+							imageSize: { width: 0.000000, height: 0.000000 },
+							thumbnail: "Contents/1.3%20What%20I%20want%20to%20k-8a6efcbe-4763-4b92-b5f0-586ab50b72df-Thumb.png?nocache=744593444"
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "2. Understanding the world as object and mechanism",
+			uuid: "66931BD6-C5AB-47C3-9A9F-9D35ED26B3B2",
+			tags: [],
+			thumbnail: "Contents/Folder66-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "2. Understanding the world as object and mechanism",
+					uuid: "564D5FC4-0DB1-4693-8560-33E753527CAD",
+					tags: [],
+					image: "Contents/2.%20Understanding%20the-564d5fc4-0db1-4693-8560-33e753527cad.png?nocache=744593444",
+					imageSize: { width: 1463.000000, height: 933.000000 },
+					thumbnail: "Contents/2.%20Understanding%20the-564d5fc4-0db1-4693-8560-33e753527cad-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "40,419 447,419 447,502 40,502",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('1641054B-403B-49C5-8E8A-3C24D58DE111')",
+							tags: [],
+							shape: "polygon",
+							coords: "477,246 704,246 704,276 477,276",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('D0EB98CA-3EFC-4CDB-9707-4890B8DB177D')",
+							tags: [],
+							shape: "polygon",
+							coords: "477,862 609,862 609,892 477,892",
+						},
+						{
+							href: "evernote:///view/8220413/s75/baf26740-bd6a-8fe1-f52e-d6760486276a/baf26740-bd6a-8fe1-f52e-d6760486276a/",
+							tags: [],
+							shape: "polygon",
+							coords: "907,191 1022,191 1022,218 907,218",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a5d02141-f515-45a7-84e4-984767a0ca46/a5d02141-f515-45a7-84e4-984767a0ca46/",
+							tags: [],
+							shape: "polygon",
+							coords: "907,228 1046,228 1046,255 907,255",
+						},
+						{
+							href: "evernote:///view/8220413/s75/6818a7aa-5d0e-3871-4140-a0ba852fc6d0/6818a7aa-5d0e-3871-4140-a0ba852fc6d0/",
+							tags: [],
+							shape: "polygon",
+							coords: "946,303 1158,303 1158,330 946,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/13cadda7-aed0-bdce-e853-ffb89ab2f088/13cadda7-aed0-bdce-e853-ffb89ab2f088/",
+							tags: [],
+							shape: "polygon",
+							coords: "946,313 1212,313 1212,340 946,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/caefe920-299f-4047-85c9-4cb06542290c/caefe920-299f-4047-85c9-4cb06542290c/",
+							tags: [],
+							shape: "polygon",
+							coords: "946,323 1104,323 1104,350 946,350",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cf16014b-56d0-4859-e3b9-5fb921c2c871/cf16014b-56d0-4859-e3b9-5fb921c2c871/",
+							tags: [],
+							shape: "polygon",
+							coords: "834,153 1034,153 1034,180 834,180",
+						},
+						{
+							href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+							tags: [],
+							shape: "polygon",
+							coords: "834,341 1098,341 1098,368 834,368",
+						},
+						{
+							href: "evernote:///view/8220413/s75/b8f540f4-51ea-4c42-9324-9834e5c6c05c/b8f540f4-51ea-4c42-9324-9834e5c6c05c/",
+							tags: [],
+							shape: "polygon",
+							coords: "734,265 926,265 926,293 734,293",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e9cd9ea5-90a5-4138-a516-a6843fc95910/e9cd9ea5-90a5-4138-a516-a6843fc95910/",
+							tags: [],
+							shape: "polygon",
+							coords: "956,265 1085,265 1085,292 956,292",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/",
+							tags: [],
+							shape: "polygon",
+							coords: "1483,560 1752,560 1752,587 1483,587",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+							tags: [],
+							shape: "polygon",
+							coords: "1483,570 1608,570 1608,597 1483,597",
+						},
+						{
+							href: "evernote:///view/8220413/s75/003f8cb4-e24e-442a-8d2b-ce83b1afec41/003f8cb4-e24e-442a-8d2b-ce83b1afec41/",
+							tags: [],
+							shape: "polygon",
+							coords: "1006,502 1225,502 1225,529 1006,529",
+						},
+						{
+							href: "evernote:///view/8220413/s75/4caa70b7-4136-4277-b03d-723bd6594a98/4caa70b7-4136-4277-b03d-723bd6594a98/",
+							tags: [],
+							shape: "polygon",
+							coords: "1006,512 1188,512 1188,539 1006,539",
+						},
+						{
+							href: "evernote:///view/8220413/s75/406f747f-0436-d8bb-94ce-8d6faf8740f8/406f747f-0436-d8bb-94ce-8d6faf8740f8/",
+							tags: [],
+							shape: "polygon",
+							coords: "1006,522 1508,522 1508,549 1006,549",
+						},
+						{
+							href: "evernote:///view/8220413/s75/340b3b8c-80ad-9629-f742-1a47538d927e/340b3b8c-80ad-9629-f742-1a47538d927e/",
+							tags: [],
+							shape: "polygon",
+							coords: "1158,446 1511,446 1511,473 1158,473",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cdef9d53-edea-4644-aee9-d355caa49158/cdef9d53-edea-4644-aee9-d355caa49158/",
+							tags: [],
+							shape: "polygon",
+							coords: "1159,398 1498,398 1498,425 1159,425",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cf33a302-0ff9-4e97-9675-ad01329a20eb/cf33a302-0ff9-4e97-9675-ad01329a20eb/",
+							tags: [],
+							shape: "polygon",
+							coords: "1528,418 1708,418 1708,445 1528,445",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e5859d9c-6629-403d-a69a-f37aac0bf253/e5859d9c-6629-403d-a69a-f37aac0bf253/",
+							tags: [],
+							shape: "polygon",
+							coords: "1738,418 2070,418 2070,445 1738,445",
+						},
+						{
+							href: "evernote:///view/8220413/s75/24137d78-95b9-4354-beba-362c8bfad9fc/24137d78-95b9-4354-beba-362c8bfad9fc/",
+							tags: [],
+							shape: "polygon",
+							coords: "1528,428 1698,428 1698,455 1528,455",
+						},
+						{
+							href: "evernote:///view/8220413/s75/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/",
+							tags: [],
+							shape: "polygon",
+							coords: "1728,428 1976,428 1976,455 1728,455",
+						},
+						{
+							href: "evernote:///view/8220413/s75/609006d3-829b-4103-b1c9-2e691c5cb938/609006d3-829b-4103-b1c9-2e691c5cb938/",
+							tags: [],
+							shape: "polygon",
+							coords: "1322,550 1575,550 1575,577 1322,577",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5665e21e-d780-4abb-a925-5cd443b32772/5665e21e-d780-4abb-a925-5cd443b32772/",
+							tags: [],
+							shape: "polygon",
+							coords: "1226,484 1424,484 1424,511 1226,511",
+						},
+						{
+							href: "evernote:///view/8220413/s75/20859bf0-14a9-4bf3-8f53-96567eeb517c/20859bf0-14a9-4bf3-8f53-96567eeb517c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1159,388 1334,388 1334,415 1159,415",
+						},
+						{
+							href: "evernote:///view/8220413/s75/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1158,436 1386,436 1386,463 1158,463",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dc2c2b6d-7619-0cd5-1438-2e5237762b65/dc2c2b6d-7619-0cd5-1438-2e5237762b65/",
+							tags: [],
+							shape: "polygon",
+							coords: "1416,436 1637,436 1637,463 1416,463",
+						},
+						{
+							href: "evernote:///view/8220413/s75/eda7e31d-12c8-44b1-921d-045e1c5edb38/eda7e31d-12c8-44b1-921d-045e1c5edb38/",
+							tags: [],
+							shape: "polygon",
+							coords: "1441,540 1734,540 1734,567 1441,567",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7790efcb-f9bf-797e-add2-ba759891fc1c/7790efcb-f9bf-797e-add2-ba759891fc1c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1764,540 2166,540 2166,567 1764,567",
+						},
+						{
+							href: "evernote:///view/8220413/s75/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/",
+							tags: [],
+							shape: "polygon",
+							coords: "1441,550 1690,550 1690,577 1441,577",
+						},
+						{
+							href: "evernote:///view/8220413/s75/195ae449-747a-4b90-9373-4336da624700/195ae449-747a-4b90-9373-4336da624700/",
+							tags: [],
+							shape: "polygon",
+							coords: "1448,464 1759,464 1759,491 1448,491",
+						},
+						{
+							href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+							tags: [],
+							shape: "polygon",
+							coords: "1448,474 1712,474 1712,501 1448,501",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f3ade69a-984c-4946-95dd-96239d8faf03/f3ade69a-984c-4946-95dd-96239d8faf03/",
+							tags: [],
+							shape: "polygon",
+							coords: "1448,484 1657,484 1657,511 1448,511",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e4fc5d93-a815-46a0-aa06-2c3d5364a407/e4fc5d93-a815-46a0-aa06-2c3d5364a407/",
+							tags: [],
+							shape: "polygon",
+							coords: "1448,494 1672,494 1672,521 1448,521",
+						},
+						{
+							href: "evernote:///view/8220413/s75/202801ef-20e0-4aa6-831b-df6025134068/202801ef-20e0-4aa6-831b-df6025134068/",
+							tags: [],
+							shape: "polygon",
+							coords: "1159,408 1499,408 1499,435 1159,435",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5e0a0618-5b0f-4e57-9836-1a719a2f7399/5e0a0618-5b0f-4e57-9836-1a719a2f7399/",
+							tags: [],
+							shape: "polygon",
+							coords: "1529,418 1675,418 1675,445 1529,445",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+							tags: [],
+							shape: "polygon",
+							coords: "1529,428 1654,428 1654,455 1529,455",
+						},
+						{
+							href: "evernote:///view/8220413/s75/02141750-aeee-4bfb-83bc-4a8b0c7dc487/02141750-aeee-4bfb-83bc-4a8b0c7dc487/",
+							tags: [],
+							shape: "polygon",
+							coords: "1226,474 1421,474 1421,501 1226,501",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1451,474 1705,474 1705,501 1451,501",
+						},
+						{
+							href: "evernote:///view/8220413/s75/788ed54e-3cca-4918-b6c3-5e5d78b42878/788ed54e-3cca-4918-b6c3-5e5d78b42878/",
+							tags: [],
+							shape: "polygon",
+							coords: "1451,484 1634,484 1634,511 1451,511",
+						},
+						{
+							href: "evernote:///view/8220413/s75/c205d82a-9fac-48c5-8ca4-49d70912240c/c205d82a-9fac-48c5-8ca4-49d70912240c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1451,494 1689,494 1689,521 1451,521",
+						},
+						{
+							href: "evernote:///view/8220413/s75/85711e51-a4e7-01d5-241c-7b340905e96c/85711e51-a4e7-01d5-241c-7b340905e96c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1451,504 1694,504 1694,531 1451,531",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bfefd30f-5c93-470c-8e0a-79482fab62be/bfefd30f-5c93-470c-8e0a-79482fab62be/",
+							tags: [],
+							shape: "polygon",
+							coords: "1451,514 1672,514 1672,541 1451,541",
+						},
+						{
+							href: "evernote:///view/8220413/s75/74a002a6-ae6f-4e41-bfeb-c38834729394/74a002a6-ae6f-4e41-bfeb-c38834729394/",
+							tags: [],
+							shape: "polygon",
+							coords: "907,426 1128,426 1128,454 907,454",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a45ef130-7878-4010-b600-04737db3c07a/a45ef130-7878-4010-b600-04737db3c07a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1158,426 1501,426 1501,453 1158,453",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('F9CD5AE6-8ADB-48D0-9278-18200818E052')",
+							tags: [],
+							shape: "polygon",
+							coords: "477,454 877,454 877,503 477,503",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bbad8e98-84fd-52fc-2a89-1976ee5f0ca1/bbad8e98-84fd-52fc-2a89-1976ee5f0ca1/",
+							tags: [],
+							shape: "polygon",
+							coords: "658,105 914,105 914,133 658,133",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('05755E03-7D57-454F-9326-F0A40B9CE241')",
+							tags: [],
+							shape: "polygon",
+							coords: "477,700 735,700 735,730 477,730",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5716ad5a-281b-465f-ac51-ec3d36667515/5716ad5a-281b-465f-ac51-ec3d36667515/",
+							tags: [],
+							shape: "polygon",
+							coords: "943,784 1190,784 1190,812 943,812",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('E682094B-2C8E-4736-9476-1F12ED5ED283')",
+							tags: [],
+							shape: "polygon",
+							coords: "878,813 1133,813 1133,842 878,842",
+						}
+					]
+				},
+				{
+					title: "2.1 Overview: Reality as Physics",
+					uuid: "DFE93AD7-27BF-4597-994A-7B9EFC19D79F",
+					tags: [],
+					thumbnail: "Contents/Folderdf-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "Math and Physics",
+							uuid: "F28F8989-7542-463E-BC26-C06E24EB9E08",
+							tags: [],
+							image: "Contents/Math%20and%20Physics-f28f8989-7542-463e-bc26-c06e24eb9e08.png?nocache=744593444",
+							imageSize: { width: 1542.000000, height: 632.000000 },
+							thumbnail: "Contents/Math%20and%20Physics-f28f8989-7542-463e-bc26-c06e24eb9e08-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('A349A51F-1E91-4D28-9124-D669613C42BA')",
+									tags: [],
+									shape: "polygon",
+									coords: "1270,184 1518,184 1518,227 1270,227",
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "2.2 Classic Physics and Math",
+					uuid: "2FA5C265-F165-45BC-BE47-163DBB67502D",
+					tags: [],
+					thumbnail: "Contents/Folder2f-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "Classic physics and math",
+							uuid: "1641054B-403B-49C5-8E8A-3C24D58DE111",
+							tags: [],
+							image: "Contents/Classic%20physics%20and%20-1641054b-403b-49c5-8e8a-3c24d58de111.png?nocache=744593444",
+							imageSize: { width: 912.000000, height: 466.000000 },
+							thumbnail: "Contents/Classic%20physics%20and%20-1641054b-403b-49c5-8e8a-3c24d58de111-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('564D5FC4-0DB1-4693-8560-33E753527CAD')",
+									tags: [],
+									shape: "polygon",
+									coords: "0,203 375,203 375,253 0,253",
+								},
+								{
+									href: "evernote:///view/8220413/s75/c6de8814-0b48-42d9-b76d-f857262e8f97/c6de8814-0b48-42d9-b76d-f857262e8f97/",
+									tags: [],
+									shape: "polygon",
+									coords: "614,308 900,308 900,335 614,335",
+								},
+								{
+									href: "evernote:///view/8220413/s75/baf26740-bd6a-8fe1-f52e-d6760486276a/baf26740-bd6a-8fe1-f52e-d6760486276a/",
+									tags: [],
+									shape: "polygon",
+									coords: "568,103 747,103 747,130 568,130",
+								},
+								{
+									href: "evernote:///view/8220413/s75/a5d02141-f515-45a7-84e4-984767a0ca46/a5d02141-f515-45a7-84e4-984767a0ca46/",
+									tags: [],
+									shape: "polygon",
+									coords: "568,140 758,140 758,167 568,167",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('4AE05B47-79C9-4451-845C-B2CC7626AD19')",
+									tags: [],
+									shape: "polygon",
+									coords: "404,205 598,205 598,234 404,234",
+								}
+							]
+						},
+						{
+							title: "Archimedes",
+							uuid: "4AE05B47-79C9-4451-845C-B2CC7626AD19",
+							tags: [],
+							image: "Contents/Archimedes-4ae05b47-79c9-4451-845c-b2cc7626ad19.png?nocache=744593444",
+							imageSize: { width: 1345.000000, height: 1154.000000 },
+							thumbnail: "Contents/Archimedes-4ae05b47-79c9-4451-845c-b2cc7626ad19-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "2.2 Greek Math and Origin of Algebra",
+							uuid: "E7536489-34CE-4505-8E39-73951CA1D035",
+							tags: [],
+							image: "Contents/2.2%20Greek%20Math%20and%20O-e7536489-34ce-4505-8e39-73951ca1d035.png?nocache=744593444",
+							imageSize: { width: 658.000000, height: 472.000000 },
+							thumbnail: "Contents/2.2%20Greek%20Math%20and%20O-e7536489-34ce-4505-8e39-73951ca1d035-Thumb.png?nocache=744593444"
+						}
+					]
+				},
+				{
+					title: "2.3 Sci Revolution",
+					uuid: "875579C7-6374-40EA-BCD9-2341EE86842D",
+					tags: [],
+					thumbnail: "Contents/Folder87-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "2.3 From the Scientific Revolution (Copernicus 1542) to the Age of Reason (Kant 1781)",
+							uuid: "F9CD5AE6-8ADB-48D0-9278-18200818E052",
+							tags: [],
+							image: "Contents/2.3%20From%20the%20Scienti-f9cd5ae6-8adb-48d0-9278-18200818e052.png?nocache=744593444",
+							imageSize: { width: 1726.000000, height: 1042.000000 },
+							thumbnail: "Contents/2.3%20From%20the%20Scienti-f9cd5ae6-8adb-48d0-9278-18200818e052-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('564D5FC4-0DB1-4693-8560-33E753527CAD')",
+									tags: [],
+									shape: "polygon",
+									coords: "46,458 484,458 484,574 46,574",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('D0EB98CA-3EFC-4CDB-9707-4890B8DB177D')",
+									tags: [],
+									shape: "polygon",
+									coords: "514,784 788,784 788,833 514,833",
+								},
+								{
+									href: "evernote:///view/8220413/s75/eda7e31d-12c8-44b1-921d-045e1c5edb38/eda7e31d-12c8-44b1-921d-045e1c5edb38/",
+									tags: [],
+									shape: "polygon",
+									coords: "942,627 1235,627 1235,654 942,654",
+								},
+								{
+									href: "evernote:///view/8220413/s75/7790efcb-f9bf-797e-add2-ba759891fc1c/7790efcb-f9bf-797e-add2-ba759891fc1c/",
+									tags: [],
+									shape: "polygon",
+									coords: "1265,627 1667,627 1667,654 1265,654",
+								},
+								{
+									href: "evernote:///view/8220413/s75/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/",
+									tags: [],
+									shape: "polygon",
+									coords: "942,664 1191,664 1191,691 942,691",
+								},
+								{
+									href: "evernote:///view/8220413/s75/02141750-aeee-4bfb-83bc-4a8b0c7dc487/02141750-aeee-4bfb-83bc-4a8b0c7dc487/",
+									tags: [],
+									shape: "polygon",
+									coords: "772,404 980,404 980,432 772,432",
+								},
+								{
+									href: "evernote:///view/8220413/s75/c205d82a-9fac-48c5-8ca4-49d70912240c/c205d82a-9fac-48c5-8ca4-49d70912240c/",
+									tags: [],
+									shape: "polygon",
+									coords: "1010,424 1248,424 1248,451 1010,451",
+								},
+								{
+									href: "evernote:///view/8220413/s75/85711e51-a4e7-01d5-241c-7b340905e96c/85711e51-a4e7-01d5-241c-7b340905e96c/",
+									tags: [],
+									shape: "polygon",
+									coords: "1010,434 1253,434 1253,461 1010,461",
+								},
+								{
+									href: "evernote:///view/8220413/s75/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/",
+									tags: [],
+									shape: "polygon",
+									coords: "1010,404 1264,404 1264,431 1010,431",
+								},
+								{
+									href: "evernote:///view/8220413/s75/788ed54e-3cca-4918-b6c3-5e5d78b42878/788ed54e-3cca-4918-b6c3-5e5d78b42878/",
+									tags: [],
+									shape: "polygon",
+									coords: "1010,414 1193,414 1193,441 1010,441",
+								},
+								{
+									href: "evernote:///view/8220413/s75/74a002a6-ae6f-4e41-bfeb-c38834729394/74a002a6-ae6f-4e41-bfeb-c38834729394/",
+									tags: [],
+									shape: "polygon",
+									coords: "514,279 763,279 763,309 514,309",
+								},
+								{
+									href: "evernote:///view/8220413/s75/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/",
+									tags: [],
+									shape: "polygon",
+									coords: "793,280 1037,280 1037,308 793,308",
+								},
+								{
+									href: "evernote:///view/8220413/s75/dc2c2b6d-7619-0cd5-1438-2e5237762b65/dc2c2b6d-7619-0cd5-1438-2e5237762b65/",
+									tags: [],
+									shape: "polygon",
+									coords: "1067,280 1288,280 1288,307 1067,307",
+								},
+								{
+									href: "evernote:///view/8220413/s75/20859bf0-14a9-4bf3-8f53-96567eeb517c/20859bf0-14a9-4bf3-8f53-96567eeb517c/",
+									tags: [],
+									shape: "polygon",
+									coords: "795,40 982,40 982,68 795,68",
+								},
+								{
+									href: "evernote:///view/8220413/s75/5665e21e-d780-4abb-a925-5cd443b32772/5665e21e-d780-4abb-a925-5cd443b32772/",
+									tags: [],
+									shape: "polygon",
+									coords: "772,442 983,442 983,470 772,470",
+								},
+								{
+									href: "evernote:///view/8220413/s75/609006d3-829b-4103-b1c9-2e691c5cb938/609006d3-829b-4103-b1c9-2e691c5cb938/",
+									tags: [],
+									shape: "polygon",
+									coords: "818,701 1089,701 1089,729 818,729",
+								},
+								{
+									href: "evernote:///view/8220413/s75/bfefd30f-5c93-470c-8e0a-79482fab62be/bfefd30f-5c93-470c-8e0a-79482fab62be/",
+									tags: [],
+									shape: "polygon",
+									coords: "1010,444 1247,444 1247,472 1010,472",
+								},
+								{
+									href: "evernote:///view/8220413/s75/202801ef-20e0-4aa6-831b-df6025134068/202801ef-20e0-4aa6-831b-df6025134068/",
+									tags: [],
+									shape: "polygon",
+									coords: "795,155 1160,155 1160,183 795,183",
+								},
+								{
+									href: "evernote:///view/8220413/s75/5e0a0618-5b0f-4e57-9836-1a719a2f7399/5e0a0618-5b0f-4e57-9836-1a719a2f7399/",
+									tags: [],
+									shape: "polygon",
+									coords: "1190,165 1345,165 1345,193 1190,193",
+								},
+								{
+									href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+									tags: [],
+									shape: "polygon",
+									coords: "1190,175 1323,175 1323,203 1190,203",
+								},
+								{
+									href: "evernote:///view/8220413/s75/cdef9d53-edea-4644-aee9-d355caa49158/cdef9d53-edea-4644-aee9-d355caa49158/",
+									tags: [],
+									shape: "polygon",
+									coords: "795,117 1158,117 1158,145 795,145",
+								},
+								{
+									href: "evernote:///view/8220413/s75/cf33a302-0ff9-4e97-9675-ad01329a20eb/cf33a302-0ff9-4e97-9675-ad01329a20eb/",
+									tags: [],
+									shape: "polygon",
+									coords: "1188,137 1380,137 1380,165 1188,165",
+								},
+								{
+									href: "evernote:///view/8220413/s75/e5859d9c-6629-403d-a69a-f37aac0bf253/e5859d9c-6629-403d-a69a-f37aac0bf253/",
+									tags: [],
+									shape: "polygon",
+									coords: "1410,137 1742,137 1742,164 1410,164",
+								},
+								{
+									href: "evernote:///view/8220413/s75/24137d78-95b9-4354-beba-362c8bfad9fc/24137d78-95b9-4354-beba-362c8bfad9fc/",
+									tags: [],
+									shape: "polygon",
+									coords: "1188,147 1370,147 1370,175 1188,175",
+								},
+								{
+									href: "evernote:///view/8220413/s75/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/",
+									tags: [],
+									shape: "polygon",
+									coords: "1400,147 1648,147 1648,174 1400,174",
+								},
+								{
+									href: "evernote:///view/8220413/s75/5fcc74ce-18f3-47fe-a3e2-46bb553bb45e/5fcc74ce-18f3-47fe-a3e2-46bb553bb45e/",
+									tags: [],
+									shape: "polygon",
+									coords: "1155,962 1390,962 1390,990 1155,990",
+								},
+								{
+									href: "evernote:///view/8220413/s75/c6de2b96-2218-498e-92c7-a5812d38124d/c6de2b96-2218-498e-92c7-a5812d38124d/",
+									tags: [],
+									shape: "polygon",
+									coords: "1155,972 1430,972 1430,1000 1155,1000",
+								},
+								{
+									href: "evernote:///view/8220413/s75/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/",
+									tags: [],
+									shape: "polygon",
+									coords: "1023,738 1292,738 1292,765 1023,765",
+								},
+								{
+									href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+									tags: [],
+									shape: "polygon",
+									coords: "1023,850 1148,850 1148,877 1023,877",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('82C06730-0149-4C7A-B679-DFBB15653FF2')",
+									tags: [],
+									shape: "polygon",
+									coords: "795,78 1076,78 1076,107 795,107",
+								},
+								{
+									href: "evernote:///view/8220413/s75/dea14d65-d00f-537e-c59c-923d8d1f3f0c/dea14d65-d00f-537e-c59c-923d8d1f3f0c/",
+									tags: [],
+									shape: "polygon",
+									coords: "772,366 977,366 977,394 772,394",
+								},
+								{
+									href: "evernote:///view/8220413/s75/195ae449-747a-4b90-9373-4336da624700/195ae449-747a-4b90-9373-4336da624700/",
+									tags: [],
+									shape: "polygon",
+									coords: "1007,366 1340,366 1340,394 1007,394",
+								},
+								{
+									href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+									tags: [],
+									shape: "polygon",
+									coords: "1007,376 1289,376 1289,404 1007,404",
+								},
+								{
+									href: "evernote:///view/8220413/s75/f3ade69a-984c-4946-95dd-96239d8faf03/f3ade69a-984c-4946-95dd-96239d8faf03/",
+									tags: [],
+									shape: "polygon",
+									coords: "1007,386 1231,386 1231,414 1007,414",
+								},
+								{
+									href: "evernote:///view/8220413/s75/e4fc5d93-a815-46a0-aa06-2c3d5364a407/e4fc5d93-a815-46a0-aa06-2c3d5364a407/",
+									tags: [],
+									shape: "polygon",
+									coords: "1007,396 1246,396 1246,424 1007,424",
+								},
+								{
+									href: "evernote:///view/8220413/s75/003f8cb4-e24e-442a-8d2b-ce83b1afec41/003f8cb4-e24e-442a-8d2b-ce83b1afec41/",
+									tags: [],
+									shape: "polygon",
+									coords: "514,534 778,534 778,564 514,564",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('FE4DD8B9-04C1-4061-9CE1-015C8F27C0AF')",
+									tags: [],
+									shape: "polygon",
+									coords: "808,516 1030,516 1030,545 808,545",
+								},
+								{
+									href: "evernote:///view/8220413/s75/406f747f-0436-d8bb-94ce-8d6faf8740f8/406f747f-0436-d8bb-94ce-8d6faf8740f8/",
+									tags: [],
+									shape: "polygon",
+									coords: "808,579 1121,579 1121,607 808,607",
+								},
+								{
+									href: "evernote:///view/8220413/s75/340b3b8c-80ad-9629-f742-1a47538d927e/340b3b8c-80ad-9629-f742-1a47538d927e/",
+									tags: [],
+									shape: "polygon",
+									coords: "793,318 1074,318 1074,346 793,346",
+								},
+								{
+									href: "evernote:///view/8220413/s75/a45ef130-7878-4010-b600-04737db3c07a/a45ef130-7878-4010-b600-04737db3c07a/",
+									tags: [],
+									shape: "polygon",
+									coords: "793,242 1120,242 1120,270 793,270",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('D1E1ACED-F30C-499D-97B1-0E7DF14802C1')",
+									tags: [],
+									shape: "polygon",
+									coords: "795,193 1091,193 1091,222 795,222",
+								},
+								{
+									href: "evernote:///view/8220413/s75/eda7e31d-12c8-44b1-921d-045e1c5edb38/eda7e31d-12c8-44b1-921d-045e1c5edb38/",
+									tags: [],
+									shape: "polygon",
+									coords: "942,627 1235,627 1235,654 942,654",
+								}
+							]
+						},
+						{
+							title: "2.3 summary",
+							uuid: "24B36621-C63B-491E-91B5-74754083CC49",
+							tags: [],
+							image: "Contents/2.3%20summary-24b36621-c63b-491e-91b5-74754083cc49.png?nocache=744593444",
+							imageSize: { width: 1416.000000, height: 827.000000 },
+							thumbnail: "Contents/2.3%20summary-24b36621-c63b-491e-91b5-74754083cc49-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('F9CD5AE6-8ADB-48D0-9278-18200818E052')",
+									tags: [],
+									shape: "polygon",
+									coords: "46,383 286,383 286,433 46,433",
+								},
+								{
+									href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+									tags: [],
+									shape: "polygon",
+									coords: "851,726 984,726 984,754 851,754",
+								},
+								{
+									href: "evernote:///view/8220413/s75/5e0a0618-5b0f-4e57-9836-1a719a2f7399/5e0a0618-5b0f-4e57-9836-1a719a2f7399/",
+									tags: [],
+									shape: "polygon",
+									coords: "851,716 1006,716 1006,744 851,744",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('FE4DD8B9-04C1-4061-9CE1-015C8F27C0AF')",
+									tags: [],
+									shape: "polygon",
+									coords: "316,576 904,576 904,606 316,606",
+								}
+							]
+						},
+						{
+							title: "2.3 notes from texts",
+							uuid: "35FD004F-26B3-4089-9DC2-4B085A60DC0B",
+							tags: [],
+							image: "Contents/2.3%20notes%20from%20texts-35fd004f-26b3-4089-9dc2-4b085a60dc0b.png?nocache=744593444",
+							imageSize: { width: 1032.000000, height: 3326.000000 },
+							thumbnail: "Contents/2.3%20notes%20from%20texts-35fd004f-26b3-4089-9dc2-4b085a60dc0b-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "Documents/Screen%20Shot%202022-10--9aef42e9-6b7a-4ade-a002-deca03d769fc/Screen%20Shot%202022-10-10%20at%205.21.36%20PM.png",
+									tags: [],
+									shape: "polygon",
+									coords: "669,517 996,517 996,917 669,917",
+								}
+							]
+						},
+						{
+							title: "2.3 summary",
+							uuid: "834BEA52-754D-4C76-9A7A-0CAC3D1B8791",
+							tags: [],
+							image: "Contents/2.3%20summary-834bea52-754d-4c76-9a7a-0cac3d1b8791.png?nocache=744593444",
+							imageSize: { width: 672.000000, height: 647.000000 },
+							thumbnail: "Contents/2.3%20summary-834bea52-754d-4c76-9a7a-0cac3d1b8791-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "Francis Bacon's works",
+							uuid: "82C06730-0149-4C7A-B679-DFBB15653FF2",
+							tags: [],
+							image: "Contents/Francis%20Bacon's%20work-82c06730-0149-4c7a-b679-dfbb15653ff2.png?nocache=744593444",
+							imageSize: { width: 1947.000000, height: 3024.000000 },
+							thumbnail: "Contents/Francis%20Bacon's%20work-82c06730-0149-4c7a-b679-dfbb15653ff2-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "evernote:///view/8220413/s75/5c3ec3bb-2bfd-4920-a33b-c5e14d5662ef/5c3ec3bb-2bfd-4920-a33b-c5e14d5662ef/",
+									tags: [],
+									shape: "polygon",
+									coords: "57,1465 389,1465 389,1548 57,1548",
+								}
+							]
+						},
+						{
+							title: "Bacon Quotes",
+							uuid: "5047D48F-1C52-4BEF-B0C7-64AC9AD2E806",
+							tags: [],
+							image: "Contents/Bacon%20Quotes-5047d48f-1c52-4bef-b0c7-64ac9ad2e806.png?nocache=744593444",
+							imageSize: { width: 1042.000000, height: 1217.000000 },
+							thumbnail: "Contents/Bacon%20Quotes-5047d48f-1c52-4bef-b0c7-64ac9ad2e806-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "Newton Principia",
+							uuid: "FE4DD8B9-04C1-4061-9CE1-015C8F27C0AF",
+							tags: [],
+							image: "Contents/Newton%20Principia-fe4dd8b9-04c1-4061-9ce1-015c8f27c0af.png?nocache=744593444",
+							imageSize: { width: 1690.000000, height: 2383.000000 },
+							thumbnail: "Contents/Newton%20Principia-fe4dd8b9-04c1-4061-9ce1-015c8f27c0af-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('F9CD5AE6-8ADB-48D0-9278-18200818E052')",
+									tags: [],
+									shape: "polygon",
+									coords: "57,1167 341,1167 341,1216 57,1216",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('D0EB98CA-3EFC-4CDB-9707-4890B8DB177D')",
+									tags: [],
+									shape: "polygon",
+									coords: "717,1694 1009,1694 1009,1748 717,1748",
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "2.4 modern mathematical physics",
+					uuid: "24C15F0C-3A35-464E-BD6E-58BE1831B783",
+					tags: [],
+					thumbnail: "Contents/Folder24-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "2.3 Modern Mathematical Physics",
+							uuid: "05755E03-7D57-454F-9326-F0A40B9CE241",
+							tags: [],
+							image: "Contents/2.3%20Modern%20Mathemati-05755e03-7d57-454f-9326-f0a40b9ce241.png?nocache=744593444",
+							imageSize: { width: 1416.000000, height: 1093.000000 },
+							thumbnail: "Contents/2.3%20Modern%20Mathemati-05755e03-7d57-454f-9326-f0a40b9ce241-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('564D5FC4-0DB1-4693-8560-33E753527CAD')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,483 336,483 336,599 56,599",
+								},
+								{
+									href: "evernote:///view/8220413/s75/7127b233-04c7-4b5e-835f-5d09535f7ae5/7127b233-04c7-4b5e-835f-5d09535f7ae5/",
+									tags: [],
+									shape: "polygon",
+									coords: "470,72 784,72 784,100 470,100",
+								},
+								{
+									href: "Documents/image-8696749f-cd1e-4893-b83f-1ecbcf282a19/image.png",
+									tags: [],
+									shape: "polygon",
+									coords: "1892,181 2144,181 2144,260 1892,260",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('4422F4BC-29C2-46EF-9B0B-FFB58ECD6CFA')",
+									tags: [],
+									shape: "polygon",
+									coords: "1003,207 1332,207 1332,236 1003,236",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('05755E03-7D57-454F-9326-F0A40B9CE241')",
+									tags: [],
+									shape: "polygon",
+									coords: "611,269 887,269 887,298 611,298",
+								},
+								{
+									href: "evernote:///view/8220413/s75/da811ad4-3bdb-1609-2beb-ac37151eb1bc/da811ad4-3bdb-1609-2beb-ac37151eb1bc/",
+									tags: [],
+									shape: "polygon",
+									coords: "756,355 1016,355 1016,383 756,383",
+								},
+								{
+									href: "evernote:///view/8220413/s75/bc4cdaf0-9ad2-4673-852d-2b2b5baaff64/bc4cdaf0-9ad2-4673-852d-2b2b5baaff64/",
+									tags: [],
+									shape: "polygon",
+									coords: "611,307 790,307 790,335 611,335",
+								},
+								{
+									href: "evernote:///view/8220413/s75/5716ad5a-281b-465f-ac51-ec3d36667515/5716ad5a-281b-465f-ac51-ec3d36667515/",
+									tags: [],
+									shape: "polygon",
+									coords: "561,805 808,805 808,833 561,833",
+								},
+								{
+									href: "evernote:///view/8220413/s75/fed179d4-25bf-b020-f0c6-23332e081a4c/fed179d4-25bf-b020-f0c6-23332e081a4c/",
+									tags: [],
+									shape: "polygon",
+									coords: "879,594 1157,594 1157,622 879,622",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('E682094B-2C8E-4736-9476-1F12ED5ED283')",
+									tags: [],
+									shape: "polygon",
+									coords: "487,996 742,996 742,1025 487,1025",
+								}
+							]
+						},
+						{
+							title: "2.3 Modern Mathematical Physics - OLD",
+							uuid: "03597AF4-686A-47C5-B621-56B57DE42774",
+							tags: [],
+							image: "Contents/2.3%20Modern%20Mathemati-03597af4-686a-47c5-b621-56b57de42774.png?nocache=744593444",
+							imageSize: { width: 1200.000000, height: 994.000000 },
+							thumbnail: "Contents/2.3%20Modern%20Mathemati-03597af4-686a-47c5-b621-56b57de42774-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "evernote:///view/8220413/s75/bc4cdaf0-9ad2-4673-852d-2b2b5baaff64/bc4cdaf0-9ad2-4673-852d-2b2b5baaff64/",
+									tags: [],
+									shape: "polygon",
+									coords: "611,471 790,471 790,499 611,499",
+								},
+								{
+									href: "evernote:///view/8220413/s75/7127b233-04c7-4b5e-835f-5d09535f7ae5/7127b233-04c7-4b5e-835f-5d09535f7ae5/",
+									tags: [],
+									shape: "polygon",
+									coords: "563,57 877,57 877,85 563,85",
+								},
+								{
+									href: "evernote:///view/8220413/s75/da811ad4-3bdb-1609-2beb-ac37151eb1bc/da811ad4-3bdb-1609-2beb-ac37151eb1bc/",
+									tags: [],
+									shape: "polygon",
+									coords: "567,161 827,161 827,189 567,189",
+								},
+								{
+									href: "evernote:///view/8220413/s75/1a34c869-cca9-19fc-1db8-a54308d0dbf0/1a34c869-cca9-19fc-1db8-a54308d0dbf0/",
+									tags: [],
+									shape: "polygon",
+									coords: "614,847 831,847 831,875 614,875",
+								},
+								{
+									href: "evernote:///view/8220413/s75/5716ad5a-281b-465f-ac51-ec3d36667515/5716ad5a-281b-465f-ac51-ec3d36667515/",
+									tags: [],
+									shape: "polygon",
+									coords: "614,857 861,857 861,885 614,885",
+								},
+								{
+									href: "evernote:///view/8220413/s75/67a4a9d7-2339-4fbc-8e7e-8a0517e12512/67a4a9d7-2339-4fbc-8e7e-8a0517e12512/",
+									tags: [],
+									shape: "polygon",
+									coords: "614,867 1200,867 1200,895 614,895",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('05755E03-7D57-454F-9326-F0A40B9CE241')",
+									tags: [],
+									shape: "polygon",
+									coords: "611,548 887,548 887,577 611,577",
+								},
+								{
+									href: "evernote:///view/8220413/s75/fed179d4-25bf-b020-f0c6-23332e081a4c/fed179d4-25bf-b020-f0c6-23332e081a4c/",
+									tags: [],
+									shape: "polygon",
+									coords: "611,433 889,433 889,461 611,461",
+								},
+								{
+									href: "Documents/image-8696749f-cd1e-4893-b83f-1ecbcf282a19/image.png",
+									tags: [],
+									shape: "polygon",
+									coords: "1181,391 1433,391 1433,470 1181,470",
+								},
+								{
+									href: "evernote:///view/8220413/s75/359f6e3b-93a2-1a60-7040-6f61eaaedffb/359f6e3b-93a2-1a60-7040-6f61eaaedffb/",
+									tags: [],
+									shape: "polygon",
+									coords: "900,417 1201,417 1201,445 900,445",
+								}
+							]
+						},
+						{
+							title: "Evolution of Physics: Einstein",
+							uuid: "E682094B-2C8E-4736-9476-1F12ED5ED283",
+							tags: [],
+							image: "Contents/Evolution%20of%20Physics-e682094b-2c8e-4736-9476-1f12ed5ed283.png?nocache=744593444",
+							imageSize: { width: 1493.000000, height: 909.000000 },
+							thumbnail: "Contents/Evolution%20of%20Physics-e682094b-2c8e-4736-9476-1f12ed5ed283-Thumb.png?nocache=744593444"
+						}
+					]
+				},
+				{
+					title: "2.5 Summary",
+					uuid: "D0EB98CA-3EFC-4CDB-9707-4890B8DB177D",
+					tags: [],
+					image: "Contents/2.5%20Summary-d0eb98ca-3efc-4cdb-9707-4890b8db177d.png?nocache=744593444",
+					imageSize: { width: 1482.000000, height: 1138.000000 },
+					thumbnail: "Contents/2.5%20Summary-d0eb98ca-3efc-4cdb-9707-4890b8db177d-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('564D5FC4-0DB1-4693-8560-33E753527CAD')",
+							tags: [],
+							shape: "polygon",
+							coords: "55,539 283,539 283,589 55,589",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('24B36621-C63B-491E-91B5-74754083CC49')",
+							tags: [],
+							shape: "polygon",
+							coords: "409,430 525,430 525,459 409,459",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('FE4DD8B9-04C1-4061-9CE1-015C8F27C0AF')",
+							tags: [],
+							shape: "polygon",
+							coords: "555,448 1095,448 1095,466 555,466",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5e0a0618-5b0f-4e57-9836-1a719a2f7399/5e0a0618-5b0f-4e57-9836-1a719a2f7399/",
+							tags: [],
+							shape: "polygon",
+							coords: "1275,530 1400,530 1400,544 1275,544",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+							tags: [],
+							shape: "polygon",
+							coords: "1275,540 1381,540 1381,554 1275,554",
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "3. World as process, systems, life",
+			uuid: "28F32CFF-5CA8-4A95-8462-73A6C3133748",
+			tags: [],
+			thumbnail: "Contents/Folder28-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "3. The world as process, systems, life",
+					uuid: "284E1226-4C93-4CC7-8E81-8D66A41BD4E3",
+					tags: [],
+					image: "Contents/3.%20The%20world%20as%20proc-284e1226-4c93-4cc7-8e81-8d66a41bd4e3.png?nocache=744593444",
+					imageSize: { width: 1078.000000, height: 961.000000 },
+					thumbnail: "Contents/3.%20The%20world%20as%20proc-284e1226-4c93-4cc7-8e81-8d66a41bd4e3-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,433 400,433 400,516 56,516",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+							tags: [],
+							shape: "polygon",
+							coords: "592,254 799,254 799,283 592,283",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('8A1ED7AF-591C-4B2C-83B9-971E0060112F')",
+							tags: [],
+							shape: "polygon",
+							coords: "597,418 905,418 905,447 597,447",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('8A1ED7AF-591C-4B2C-83B9-971E0060112F')",
+							tags: [],
+							shape: "polygon",
+							coords: "429,839 660,839 660,868 429,868",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+							tags: [],
+							shape: "polygon",
+							coords: "592,293 720,293 720,322 592,322",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+							tags: [],
+							shape: "polygon",
+							coords: "592,369 819,369 819,398 592,398",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('5F26C275-C54C-4171-BAE1-023EB07759A0')",
+							tags: [],
+							shape: "polygon",
+							coords: "429,684 619,684 619,727 429,727",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('6C25561E-E569-4C08-B1F0-A46AFA28D8B8')",
+							tags: [],
+							shape: "polygon",
+							coords: "597,531 852,531 852,560 597,560",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('BF4AB324-9422-4A49-A6E6-EA90BC413DEC')",
+							tags: [],
+							shape: "polygon",
+							coords: "674,93 972,93 972,122 674,122",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('75F614FC-65E1-42F4-8C91-A6F239E3C66C')",
+							tags: [],
+							shape: "polygon",
+							coords: "674,54 1009,54 1009,83 674,83",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('AE4ACA26-0761-4467-83FA-4B12F1AA43D2')",
+							tags: [],
+							shape: "polygon",
+							coords: "649,691 823,691 823,720 649,720",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1b4be555-95c5-b735-f2eb-8b047a07c7ea/1b4be555-95c5-b735-f2eb-8b047a07c7ea/",
+							tags: [],
+							shape: "polygon",
+							coords: "649,654 836,654 836,681 649,681",
+						},
+						{
+							href: "evernote:///view/8220413/s75/8aa4ab98-80ec-e106-c970-7b50e4bf2446/8aa4ab98-80ec-e106-c970-7b50e4bf2446/",
+							tags: [],
+							shape: "polygon",
+							coords: "649,730 945,730 945,757 649,757",
+						},
+						{
+							href: "evernote:///view/8220413/s75/50cf965e-c873-42c2-b74f-8c422566a068/50cf965e-c873-42c2-b74f-8c422566a068/",
+							tags: [],
+							shape: "polygon",
+							coords: "597,494 818,494 818,521 597,521",
+						},
+						{
+							href: "evernote:///view/8220413/s75/3e240a92-4dc8-4b4c-6abc-df7fc818d0a5/3e240a92-4dc8-4b4c-6abc-df7fc818d0a5/",
+							tags: [],
+							shape: "polygon",
+							coords: "597,570 815,570 815,597 597,597",
+						},
+						{
+							href: "evernote:///view/8220413/s75/c1a9e4ce-3c2c-c3a3-fc08-6dbd59a5d661/c1a9e4ce-3c2c-c3a3-fc08-6dbd59a5d661/",
+							tags: [],
+							shape: "polygon",
+							coords: "649,617 1011,617 1011,644 649,644",
+						},
+						{
+							href: "evernote:///view/8220413/s75/01cce622-d122-47ea-9527-1d44b806ef76/01cce622-d122-47ea-9527-1d44b806ef76/",
+							tags: [],
+							shape: "polygon",
+							coords: "649,767 935,767 935,794 649,794",
+						},
+						{
+							href: "evernote:///view/8220413/s75/db1f92a5-ee66-3655-1f30-0e20c99a62f2/db1f92a5-ee66-3655-1f30-0e20c99a62f2/",
+							tags: [],
+							shape: "polygon",
+							coords: "597,457 853,457 853,484 597,484",
+						},
+						{
+							href: "evernote:///view/8220413/s75/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/",
+							tags: [],
+							shape: "polygon",
+							coords: "592,217 773,217 773,244 592,244",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a471d1fc-859a-4db7-910a-e775f758ef44/a471d1fc-859a-4db7-910a-e775f758ef44/",
+							tags: [],
+							shape: "polygon",
+							coords: "674,132 972,132 972,159 674,159",
+						},
+						{
+							href: "evernote:///view/8220413/s75/6b0e2550-9ea4-8ef7-a47a-43db29dbee47/6b0e2550-9ea4-8ef7-a47a-43db29dbee47/",
+							tags: [],
+							shape: "polygon",
+							coords: "674,169 931,169 931,196 674,196",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1c333888-07f7-4ad1-a730-94186ed01530/1c333888-07f7-4ad1-a730-94186ed01530/",
+							tags: [],
+							shape: "polygon",
+							coords: "592,332 766,332 766,359 592,359",
+						}
+					],
+					childHierarchy: [
+						{
+							title: "OLD 3. The world as process, systems, life",
+							uuid: "24ABF42F-E7F4-44FF-B733-1B979D89DAAF",
+							tags: [],
+							image: "Contents/OLD%203.%20The%20world%20as%20-24abf42f-e7f4-44ff-b733-1b979d89daaf.png?nocache=744593444",
+							imageSize: { width: 1148.000000, height: 1049.000000 },
+							thumbnail: "Contents/OLD%203.%20The%20world%20as%20-24abf42f-e7f4-44ff-b733-1b979d89daaf-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('7BE8CBAB-E5A1-4707-AC16-BCA4A332616D')",
+									tags: [],
+									shape: "polygon",
+									coords: "121,477 465,477 465,560 121,560",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+									tags: [],
+									shape: "polygon",
+									coords: "657,174 864,174 864,203 657,203",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('8A1ED7AF-591C-4B2C-83B9-971E0060112F')",
+									tags: [],
+									shape: "polygon",
+									coords: "662,373 970,373 970,402 662,402",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+									tags: [],
+									shape: "polygon",
+									coords: "657,213 785,213 785,242 657,242",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+									tags: [],
+									shape: "polygon",
+									coords: "657,282 884,282 884,311 657,311",
+								},
+								{
+									href: "evernote:///view/8220413/s75/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/",
+									tags: [],
+									shape: "polygon",
+									coords: "657,144 822,144 822,164 657,164",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('6C25561E-E569-4C08-B1F0-A46AFA28D8B8')",
+									tags: [],
+									shape: "polygon",
+									coords: "662,442 917,442 917,471 662,471",
+								},
+								{
+									href: "evernote:///view/8220413/s75/07679b28-cae3-1e16-f471-c5929e947fd7/07679b28-cae3-1e16-f471-c5929e947fd7/",
+									tags: [],
+									shape: "polygon",
+									coords: "691,536 955,536 955,556 691,556",
+								},
+								{
+									href: "evernote:///view/8220413/s75/3587efd9-4ff1-f34b-daf8-f2208deea95f/3587efd9-4ff1-f34b-daf8-f2208deea95f/",
+									tags: [],
+									shape: "polygon",
+									coords: "875,731 1130,731 1130,758 875,758",
+								},
+								{
+									href: "evernote:///view/8220413/s75/281b908a-096d-42ed-a350-3f908734bea8/281b908a-096d-42ed-a350-3f908734bea8/",
+									tags: [],
+									shape: "polygon",
+									coords: "875,741 1138,741 1138,768 875,768",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('BF4AB324-9422-4A49-A6E6-EA90BC413DEC')",
+									tags: [],
+									shape: "polygon",
+									coords: "739,94 1037,94 1037,123 739,123",
+								},
+								{
+									href: "evernote:///view/8220413/s75/0e13f721-9fb7-a721-505c-0ce32da0a75b/0e13f721-9fb7-a721-505c-0ce32da0a75b/",
+									tags: [],
+									shape: "polygon",
+									coords: "739,105 1120,105 1120,132 739,132",
+								},
+								{
+									href: "evernote:///view/8220413/s75/240d80e5-45da-4814-bb43-888f2e5d46aa/240d80e5-45da-4814-bb43-888f2e5d46aa/",
+									tags: [],
+									shape: "polygon",
+									coords: "739,125 1226,125 1226,152 739,152",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+									tags: [],
+									shape: "polygon",
+									coords: "739,54 876,54 876,83 739,83",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+									tags: [],
+									shape: "polygon",
+									coords: "739,74 960,74 960,103 739,103",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('75F614FC-65E1-42F4-8C91-A6F239E3C66C')",
+									tags: [],
+									shape: "polygon",
+									coords: "739,64 1074,64 1074,93 739,93",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('AE4ACA26-0761-4467-83FA-4B12F1AA43D2')",
+									tags: [],
+									shape: "polygon",
+									coords: "691,659 865,659 865,688 691,688",
+								},
+								{
+									href: "evernote:///view/8220413/s75/1b4be555-95c5-b735-f2eb-8b047a07c7ea/1b4be555-95c5-b735-f2eb-8b047a07c7ea/",
+									tags: [],
+									shape: "polygon",
+									coords: "691,622 878,622 878,649 691,649",
+								},
+								{
+									href: "evernote:///view/8220413/s75/8aa4ab98-80ec-e106-c970-7b50e4bf2446/8aa4ab98-80ec-e106-c970-7b50e4bf2446/",
+									tags: [],
+									shape: "polygon",
+									coords: "691,698 987,698 987,725 691,725",
+								}
+							]
+						},
+						{
+							title: "OLD 3. Understanding the world as systems",
+							uuid: "0215EAB9-E6DF-47E2-A2F2-A98F07323A13",
+							tags: [],
+							image: "Contents/OLD%203.%20Understanding-0215eab9-e6df-47e2-a2f2-a98f07323a13.png?nocache=744593444",
+							imageSize: { width: 1287.000000, height: 980.000000 },
+							thumbnail: "Contents/OLD%203.%20Understanding-0215eab9-e6df-47e2-a2f2-a98f07323a13-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "OLD 3. The world as process, systems, life",
+							uuid: "1650AF50-C2C6-44A9-8144-8D8D9B8C4F4A",
+							tags: [],
+							image: "Contents/OLD%203.%20The%20world%20as%20-1650af50-c2c6-44a9-8144-8d8d9b8c4f4a.png?nocache=744593444",
+							imageSize: { width: 1164.000000, height: 1890.000000 },
+							thumbnail: "Contents/OLD%203.%20The%20world%20as%20-1650af50-c2c6-44a9-8144-8d8d9b8c4f4a-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+									tags: [],
+									shape: "polygon",
+									coords: "558,156 765,156 765,185 558,185",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+									tags: [],
+									shape: "polygon",
+									coords: "558,195 693,195 693,224 558,224",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+									tags: [],
+									shape: "polygon",
+									coords: "463,437 534,437 534,466 463,466",
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "3.1 Intro",
+					uuid: "E0A7ACDF-F45E-44AE-86E1-FBE7479381EB",
+					tags: [],
+					thumbnail: "Contents/Foldere0-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "Bergson: Introduction to Metaphysics",
+							uuid: "BF4AB324-9422-4A49-A6E6-EA90BC413DEC",
+							tags: [],
+							image: "Contents/Bergson%20Introduction-bf4ab324-9422-4a49-a6e6-ea90bc413dec.png?nocache=744593444",
+							imageSize: { width: 1460.000000, height: 1573.000000 },
+							thumbnail: "Contents/Bergson%20Introduction-bf4ab324-9422-4a49-a6e6-ea90bc413dec-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('284E1226-4C93-4CC7-8E81-8D66A41BD4E3')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,723 373,723 373,839 56,839",
+								}
+							],
+							childHierarchy: [
+								{
+									title: "Bergson: Introduction to Metaphysics",
+									uuid: "E2972EB0-C059-45FD-97F3-CB2BBE310ADA",
+									tags: [],
+									image: "Contents/Bergson%20Introduction-e2972eb0-c059-45fd-97f3-cb2bbe310ada.png?nocache=744593444",
+									imageSize: { width: 1357.000000, height: 1002.000000 },
+									thumbnail: "Contents/Bergson%20Introduction-e2972eb0-c059-45fd-97f3-cb2bbe310ada-Thumb.png?nocache=744593444"
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "3.2 Ancient/Premodern",
+					uuid: "8292088A-17F0-4E19-AA16-692D77C8D67E",
+					tags: [],
+					thumbnail: "Contents/Folder82-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "Timaeus Plato",
+							uuid: "28DB5B66-B021-4665-AE49-18508E2C5EA2",
+							tags: [],
+							image: "Contents/Timaeus%20Plato-28db5b66-b021-4665-ae49-18508e2c5ea2.png?nocache=744593444",
+							imageSize: { width: 1566.000000, height: 1045.000000 },
+							thumbnail: "Contents/Timaeus%20Plato-28db5b66-b021-4665-ae49-18508e2c5ea2-Thumb.png?nocache=744593444"
+						},
+						{
+							title: "Kant: Teleological Judgement",
+							uuid: "99124B45-BAE8-42A0-B37C-57873C06BBE2",
+							tags: [],
+							image: "Contents/Kant%20Teleological%20Ju-99124b45-bae8-42a0-b37c-57873c06bbe2.png?nocache=744593444",
+							imageSize: { width: 1905.000000, height: 2421.000000 },
+							thumbnail: "Contents/Kant%20Teleological%20Ju-99124b45-bae8-42a0-b37c-57873c06bbe2-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('8A1ED7AF-591C-4B2C-83B9-971E0060112F')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,1163 536,1163 536,1246 56,1246",
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "3.3 Biology",
+					uuid: "2565F558-35EC-40F8-85DD-B49C7A7849D6",
+					tags: [],
+					thumbnail: "Contents/Folder25-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "Darwin: On the Origin of Species",
+							uuid: "33AF534C-0475-4A5E-B31B-46393DA4C4CF",
+							tags: [],
+							image: "Contents/Darwin%20On%20the%20Origin-33af534c-0475-4a5e-b31b-46393da4c4cf.png?nocache=744593444",
+							imageSize: { width: 1592.000000, height: 2812.000000 },
+							thumbnail: "Contents/Darwin%20On%20the%20Origin-33af534c-0475-4a5e-b31b-46393da4c4cf-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('7BE8CBAB-E5A1-4707-AC16-BCA4A332616D')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,1359 505,1359 505,1442 56,1442",
+								},
+								{
+									href: "Documents/image-4532151b-0bd9-4fbc-84e5-4a5b3ce0a614/image.png",
+									tags: [],
+									shape: "polygon",
+									coords: "767,1414 1180,1414 1180,1687 767,1687",
+								}
+							]
+						},
+						{
+							title: "Mayr: New Philosophy of Biology, 1988",
+							uuid: "6C25561E-E569-4C08-B1F0-A46AFA28D8B8",
+							tags: [],
+							image: "Contents/Mayr%20New%20Philosophy%20-6c25561e-e569-4c08-b1f0-a46afa28d8b8.png?nocache=744593444",
+							imageSize: { width: 1517.000000, height: 4932.000000 },
+							thumbnail: "Contents/Mayr%20New%20Philosophy%20-6c25561e-e569-4c08-b1f0-a46afa28d8b8-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('8A1ED7AF-591C-4B2C-83B9-971E0060112F')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,2419 505,2419 505,2502 56,2502",
+								},
+								{
+									href: "evernote:///view/8220413/s75/56bcc5c9-135f-47ee-bc6e-a3b49717caac/56bcc5c9-135f-47ee-bc6e-a3b49717caac/",
+									tags: [],
+									shape: "polygon",
+									coords: "535,4831 915,4831 915,4864 535,4864",
+								}
+							]
+						},
+						{
+							title: "Mayr:reduced",
+							uuid: "95FF10B1-6614-4E5A-8002-168EEAC295D8",
+							tags: [],
+							image: "Contents/Mayrreduced-95ff10b1-6614-4e5a-8002-168eeac295d8.png?nocache=744593444",
+							imageSize: { width: 1355.000000, height: 1631.000000 },
+							thumbnail: "Contents/Mayrreduced-95ff10b1-6614-4e5a-8002-168eeac295d8-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('7BE8CBAB-E5A1-4707-AC16-BCA4A332616D')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,768 397,768 397,851 56,851",
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "3.4 Cybernetics",
+					uuid: "D40A31BD-C478-4D77-9B94-35D896122BB5",
+					tags: [],
+					thumbnail: "Contents/Folderd4-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "3.4 Cybernetics",
+							uuid: "5F26C275-C54C-4171-BAE1-023EB07759A0",
+							tags: [],
+							image: "Contents/3.4%20Cybernetics-5f26c275-c54c-4171-bae1-023eb07759a0.png?nocache=744593444",
+							imageSize: { width: 1332.000000, height: 1075.000000 },
+							thumbnail: "Contents/3.4%20Cybernetics-5f26c275-c54c-4171-bae1-023eb07759a0-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('284E1226-4C93-4CC7-8E81-8D66A41BD4E3')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,507 400,507 400,557 56,557",
+								},
+								{
+									href: "evernote:///view/8220413/s75/c1a9e4ce-3c2c-c3a3-fc08-6dbd59a5d661/c1a9e4ce-3c2c-c3a3-fc08-6dbd59a5d661/",
+									tags: [],
+									shape: "polygon",
+									coords: "429,55 762,55 762,98 429,98",
+								},
+								{
+									href: "evernote:///view/8220413/s75/1b4be555-95c5-b735-f2eb-8b047a07c7ea/1b4be555-95c5-b735-f2eb-8b047a07c7ea/",
+									tags: [],
+									shape: "polygon",
+									coords: "429,165 628,165 628,192 429,192",
+								},
+								{
+									href: "Documents/image-bfb37635-b16f-47f2-a95f-62f14d6dc312/image.png",
+									tags: [],
+									shape: "polygon",
+									coords: "658,118 908,118 908,240 658,240",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('AE4ACA26-0761-4467-83FA-4B12F1AA43D2')",
+									tags: [],
+									shape: "polygon",
+									coords: "430,417 588,417 588,435 430,435",
+								},
+								{
+									href: "evernote:///view/8220413/s75/8aa4ab98-80ec-e106-c970-7b50e4bf2446/8aa4ab98-80ec-e106-c970-7b50e4bf2446/",
+									tags: [],
+									shape: "polygon",
+									coords: "429,639 747,639 747,666 429,666",
+								},
+								{
+									href: "evernote:///view/8220413/s75/01cce622-d122-47ea-9527-1d44b806ef76/01cce622-d122-47ea-9527-1d44b806ef76/",
+									tags: [],
+									shape: "polygon",
+									coords: "429,939 736,939 736,966 429,966",
+								},
+								{
+									href: "evernote:///view/8220413/s75/11839b91-0bb6-4369-9702-c43054cfaa7d/11839b91-0bb6-4369-9702-c43054cfaa7d/",
+									tags: [],
+									shape: "polygon",
+									coords: "429,281 723,281 723,308 429,308",
+								},
+								{
+									href: "evernote:///view/8220413/s75/97d3abb7-ab30-facf-267b-d089872a10fc/97d3abb7-ab30-facf-267b-d089872a10fc/",
+									tags: [],
+									shape: "polygon",
+									coords: "576,821 817,821 817,835 576,835",
+								},
+								{
+									href: "evernote:///view/8220413/s75/75bc7a8f-787d-4612-8b0d-0ce1bf3aa37e/75bc7a8f-787d-4612-8b0d-0ce1bf3aa37e/",
+									tags: [],
+									shape: "polygon",
+									coords: "592,858 902,858 902,872 592,872",
+								}
+							]
+						},
+						{
+							title: "Ashby: Cybernetics 1957",
+							uuid: "AE4ACA26-0761-4467-83FA-4B12F1AA43D2",
+							tags: [],
+							image: "Contents/Ashby%20Cybernetics%2019-ae4aca26-0761-4467-83fa-4b12f1aa43d2.png?nocache=744593444",
+							imageSize: { width: 1558.000000, height: 2307.000000 },
+							thumbnail: "Contents/Ashby%20Cybernetics%2019-ae4aca26-0761-4467-83fa-4b12f1aa43d2-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('5F26C275-C54C-4171-BAE1-023EB07759A0')",
+									tags: [],
+									shape: "polygon",
+									coords: "56,1106 397,1106 397,1189 56,1189",
+								}
+							]
+						}
+					]
+				},
+				{
+					title: "3.5 Summary",
+					uuid: "8600687B-330A-48B4-9515-50759EA42935",
+					tags: [],
+					thumbnail: "Contents/Folder86-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "3.5 Summary",
+							uuid: "8A1ED7AF-591C-4B2C-83B9-971E0060112F",
+							tags: [],
+							image: "Contents/3.5%20Summary-8a1ed7af-591c-4b2c-83b9-971e0060112f.png?nocache=744593444",
+							imageSize: { width: 1524.000000, height: 2078.000000 },
+							thumbnail: "Contents/3.5%20Summary-8a1ed7af-591c-4b2c-83b9-971e0060112f-Thumb.png?nocache=744593444",
+							imagemap: [
+								{
+									href: "javascript:goToSlideWithUUID('284E1226-4C93-4CC7-8E81-8D66A41BD4E3')",
+									tags: [],
+									shape: "polygon",
+									coords: "55,1009 283,1009 283,1059 55,1059",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('AE4ACA26-0761-4467-83FA-4B12F1AA43D2')",
+									tags: [],
+									shape: "polygon",
+									coords: "430,1718 604,1718 604,1747 430,1747",
+								},
+								{
+									href: "evernote:///view/8220413/s75/01cce622-d122-47ea-9527-1d44b806ef76/01cce622-d122-47ea-9527-1d44b806ef76/",
+									tags: [],
+									shape: "polygon",
+									coords: "430,1761 716,1761 716,1788 430,1788",
+								},
+								{
+									href: "evernote:///view/8220413/s75/8aa4ab98-80ec-e106-c970-7b50e4bf2446/8aa4ab98-80ec-e106-c970-7b50e4bf2446/",
+									tags: [],
+									shape: "polygon",
+									coords: "430,1798 726,1798 726,1825 430,1825",
+								},
+								{
+									href: "evernote:///view/8220413/s75/8aa4ab98-80ec-e106-c970-7b50e4bf2446/8aa4ab98-80ec-e106-c970-7b50e4bf2446/",
+									tags: [],
+									shape: "polygon",
+									coords: "523,1623 819,1623 819,1650 523,1650",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('6C25561E-E569-4C08-B1F0-A46AFA28D8B8')",
+									tags: [],
+									shape: "polygon",
+									coords: "430,1909 685,1909 685,1938 430,1938",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+									tags: [],
+									shape: "polygon",
+									coords: "523,758 750,758 750,787 523,787",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+									tags: [],
+									shape: "polygon",
+									coords: "467,274 703,274 703,303 467,303",
+								},
+								{
+									href: "evernote:///view/8220413/s75/a471d1fc-859a-4db7-910a-e775f758ef44/a471d1fc-859a-4db7-910a-e775f758ef44/",
+									tags: [],
+									shape: "polygon",
+									coords: "467,346 741,346 741,373 467,373",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('284E1226-4C93-4CC7-8E81-8D66A41BD4E3')",
+									tags: [],
+									shape: "polygon",
+									coords: "467,397 741,397 741,426 467,426",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('75F614FC-65E1-42F4-8C91-A6F239E3C66C')",
+									tags: [],
+									shape: "polygon",
+									coords: "467,441 802,441 802,470 467,470",
+								},
+								{
+									href: "evernote:///view/8220413/s75/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/",
+									tags: [],
+									shape: "polygon",
+									coords: "467,73 648,73 648,100 467,100",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+									tags: [],
+									shape: "polygon",
+									coords: "467,172 634,172 634,201 467,201",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('6C25561E-E569-4C08-B1F0-A46AFA28D8B8')",
+									tags: [],
+									shape: "polygon",
+									coords: "523,1467 778,1467 778,1496 523,1496",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+									tags: [],
+									shape: "polygon",
+									coords: "523,616 756,616 756,645 523,645",
+								},
+								{
+									href: "javascript:goToSlideWithUUID('7BE8CBAB-E5A1-4707-AC16-BCA4A332616D')",
+									tags: [],
+									shape: "polygon",
+									coords: "523,1085 698,1085 698,1114 523,1114",
+								},
+								{
+									href: "evernote:///view/8220413/s75/9e088db6-3693-d402-5c12-6d6614a16934/9e088db6-3693-d402-5c12-6d6614a16934/",
+									tags: [],
+									shape: "polygon",
+									coords: "467,484 727,484 727,511 467,511",
+								},
+								{
+									href: "https://docs.google.com/document/d/1NIx-6-QfDHX8cIgZIQk2w6QWNtQhAy_9y3eSMmA-dGk/edit#heading=h.pt318l100ylc",
+									tags: [],
+									shape: "polygon",
+									coords: "36,61 454,61 454,131 36,131",
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "4. Understanding the world as concepts",
+			uuid: "5EFDEE10-E4A3-46A6-9325-DB060DD06CA5",
+			tags: [],
+			thumbnail: "Contents/Folder5e-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "4. Understanding the world as concepts",
+					uuid: "4B7FE594-D934-45C6-9DB6-741BD8AF9E50",
+					tags: [],
+					image: "Contents/4.%20Understanding%20the-4b7fe594-d934-45c6-9db6-741bd8af9e50.png?nocache=744593444",
+					imageSize: { width: 1253.000000, height: 1060.000000 },
+					thumbnail: "Contents/4.%20Understanding%20the-4b7fe594-d934-45c6-9db6-741bd8af9e50-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,483 468,483 468,566 56,566",
+						},
+						{
+							href: "evernote:///view/8220413/s75/77219858-b6d1-3f6b-ea92-b3f3745ee7c6/77219858-b6d1-3f6b-ea92-b3f3745ee7c6/",
+							tags: [],
+							shape: "polygon",
+							coords: "679,891 900,891 900,918 679,918",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('2EFC2955-0B2B-40D1-A17C-4088B1A4D523')",
+							tags: [],
+							shape: "polygon",
+							coords: "710,292 1058,292 1058,321 710,321",
+						},
+						{
+							href: "evernote:///view/8220413/s75/58cbe409-5d64-4f2b-9d8f-70b7a5389b5e/58cbe409-5d64-4f2b-9d8f-70b7a5389b5e/",
+							tags: [],
+							shape: "polygon",
+							coords: "617,177 802,177 802,204 617,204",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('92C2E373-4F4E-4F4B-895C-41ACEA1BE596')",
+							tags: [],
+							shape: "polygon",
+							coords: "497,435 661,435 661,464 497,464",
+						},
+						{
+							href: "evernote:///view/8220413/s75/01887fc4-938a-4302-968f-de04a3c91870/01887fc4-938a-4302-968f-de04a3c91870/",
+							tags: [],
+							shape: "polygon",
+							coords: "721,538 940,538 940,565 721,565",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('A9E6C2CC-263C-4E48-BDB0-121A46704149')",
+							tags: [],
+							shape: "polygon",
+							coords: "617,214 740,214 740,243 617,243",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fce6aafd-33ff-6d92-760c-f51374d7a733/fce6aafd-33ff-6d92-760c-f51374d7a733/",
+							tags: [],
+							shape: "polygon",
+							coords: "721,575 962,575 962,602 721,602",
+						},
+						{
+							href: "evernote:///view/8220413/s75/6f5fe7bd-bf9f-455f-ac94-6bb5c8eef59d/6f5fe7bd-bf9f-455f-ac94-6bb5c8eef59d/",
+							tags: [],
+							shape: "polygon",
+							coords: "661,93 994,93 994,120 661,120",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('D1E1ACED-F30C-499D-97B1-0E7DF14802C1')",
+							tags: [],
+							shape: "polygon",
+							coords: "617,253 896,253 896,282 617,282",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fd227053-7e42-1ee7-5e23-6dacd1786857/fd227053-7e42-1ee7-5e23-6dacd1786857/",
+							tags: [],
+							shape: "polygon",
+							coords: "661,56 898,56 898,83 661,83",
+						},
+						{
+							href: "evernote:///view/8220413/s75/ca5a1b88-6b0b-4e58-b415-a381f8e9d1a2/ca5a1b88-6b0b-4e58-b415-a381f8e9d1a2/",
+							tags: [],
+							shape: "polygon",
+							coords: "697,622 1017,622 1017,649 697,649",
+						},
+						{
+							href: "evernote:///view/8220413/s75/8b928296-f12b-4c3d-aa88-aaf067c9d7aa/8b928296-f12b-4c3d-aa88-aaf067c9d7aa/",
+							tags: [],
+							shape: "polygon",
+							coords: "697,659 948,659 948,686 697,686",
+						},
+						{
+							href: "evernote:///view/8220413/s75/8aa4ab98-80ec-e106-c970-7b50e4bf2446/8aa4ab98-80ec-e106-c970-7b50e4bf2446/",
+							tags: [],
+							shape: "polygon",
+							coords: "661,130 963,130 963,157 661,157",
+						},
+						{
+							href: "evernote:///view/8220413/s75/59280cfb-827b-40d2-88bb-2c4f54c26b3d/59280cfb-827b-40d2-88bb-2c4f54c26b3d/",
+							tags: [],
+							shape: "polygon",
+							coords: "866,733 1184,733 1184,760 866,760",
+						},
+						{
+							href: "https://en.wikipedia.org/wiki/Semantic_Web",
+							tags: [],
+							shape: "polygon",
+							coords: "1005,780 1179,780 1179,807 1005,807",
+						},
+						{
+							href: "evernote:///view/8220413/s75/330d4bfd-1378-466f-8b81-4c1b0c8c3180/330d4bfd-1378-466f-8b81-4c1b0c8c3180/",
+							tags: [],
+							shape: "polygon",
+							coords: "1011,807 1400,807 1400,834 1011,834",
+						},
+						{
+							href: "evernote:///view/8220413/s75/4161d058-7297-8aaa-5e9b-ef905451fe5b/4161d058-7297-8aaa-5e9b-ef905451fe5b/",
+							tags: [],
+							shape: "polygon",
+							coords: "1011,817 1217,817 1217,844 1011,844",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('75F614FC-65E1-42F4-8C91-A6F239E3C66C')",
+							tags: [],
+							shape: "polygon",
+							coords: "617,331 932,331 932,360 617,360",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,483 468,483 468,566 56,566",
+						}
+					]
+				},
+				{
+					title: "4.3 Modern Metaphysics",
+					uuid: "92C2E373-4F4E-4F4B-895C-41ACEA1BE596",
+					tags: [],
+					image: "Contents/4.3%20Modern%20Metaphysi-92c2e373-4f4e-4f4b-895c-41acea1be596.png?nocache=744593444",
+					imageSize: { width: 1244.000000, height: 1164.000000 },
+					thumbnail: "Contents/4.3%20Modern%20Metaphysi-92c2e373-4f4e-4f4b-895c-41acea1be596-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "380,612 792,612 792,695 380,695",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('4B7FE594-D934-45C6-9DB6-741BD8AF9E50')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,552 396,552 396,602 56,602",
+						},
+						{
+							href: "evernote:///view/8220413/s75/ff4e14be-c519-e5b0-9c7a-db99dee61af2/ff4e14be-c519-e5b0-9c7a-db99dee61af2/",
+							tags: [],
+							shape: "polygon",
+							coords: "694,652 983,652 983,679 694,679",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bf2892f3-de83-45e3-94f5-0c9cbc43f89c/bf2892f3-de83-45e3-94f5-0c9cbc43f89c/",
+							tags: [],
+							shape: "polygon",
+							coords: "694,726 1008,726 1008,753 694,753",
+						},
+						{
+							href: "evernote:///view/8220413/s75/0f2a5fbd-757d-b954-852c-bc3844e396f6/0f2a5fbd-757d-b954-852c-bc3844e396f6/",
+							tags: [],
+							shape: "polygon",
+							coords: "626,568 858,568 858,595 626,595",
+						},
+						{
+							href: "evernote:///view/8220413/s75/34d31034-4f58-ab86-a20a-8ee671d58a6b/34d31034-4f58-ab86-a20a-8ee671d58a6b/",
+							tags: [],
+							shape: "polygon",
+							coords: "626,494 814,494 814,521 626,521",
+						},
+						{
+							href: "evernote:///view/8220413/s75/9280f0a3-8e1c-438e-b7ad-1fc9e6010439/9280f0a3-8e1c-438e-b7ad-1fc9e6010439/",
+							tags: [],
+							shape: "polygon",
+							coords: "626,605 739,605 739,632 626,632",
+						},
+						{
+							href: "evernote:///view/8220413/s75/714a65b9-ca45-40c8-bff4-63932a8ecd1d/714a65b9-ca45-40c8-bff4-63932a8ecd1d/",
+							tags: [],
+							shape: "polygon",
+							coords: "769,605 951,605 951,632 769,632",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7d4153fc-fd6c-0759-ea55-1a049a0233ce/7d4153fc-fd6c-0759-ea55-1a049a0233ce/",
+							tags: [],
+							shape: "polygon",
+							coords: "626,438 829,438 829,465 626,465",
+						},
+						{
+							href: "evernote:///view/8220413/s75/c6df758e-ba46-85b8-8e32-c1ea274b5253/c6df758e-ba46-85b8-8e32-c1ea274b5253/",
+							tags: [],
+							shape: "polygon",
+							coords: "859,419 1106,419 1106,446 859,446",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5cab553d-6e18-4e1b-b9c1-5eb10d216ab9/5cab553d-6e18-4e1b-b9c1-5eb10d216ab9/",
+							tags: [],
+							shape: "polygon",
+							coords: "626,531 831,531 831,558 626,558",
+						},
+						{
+							href: "evernote:///view/8220413/s75/42a6a97f-837e-b36b-761c-e1125710b011/42a6a97f-837e-b36b-761c-e1125710b011/",
+							tags: [],
+							shape: "polygon",
+							coords: "859,456 1159,456 1159,483 859,483",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f6f23e71-254b-4bbe-95ca-bec6a4253342/f6f23e71-254b-4bbe-95ca-bec6a4253342/",
+							tags: [],
+							shape: "polygon",
+							coords: "630,336 1065,336 1065,363 630,363",
+						},
+						{
+							href: "evernote:///view/8220413/s75/b156920e-3eae-436a-849d-fb8961287830/b156920e-3eae-436a-849d-fb8961287830/",
+							tags: [],
+							shape: "polygon",
+							coords: "694,689 941,689 941,716 694,716",
+						},
+						{
+							href: "evernote:///view/8220413/s75/2e0b9c78-440b-d672-65c4-176c158d343f/2e0b9c78-440b-d672-65c4-176c158d343f/",
+							tags: [],
+							shape: "polygon",
+							coords: "544,156 715,156 715,183 544,183",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('BF4AB324-9422-4A49-A6E6-EA90BC413DEC')",
+							tags: [],
+							shape: "polygon",
+							coords: "544,56 849,56 849,85 544,85",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a979907e-8c52-42e6-8995-1ffa26cf2275/a979907e-8c52-42e6-8995-1ffa26cf2275/",
+							tags: [],
+							shape: "polygon",
+							coords: "544,103 837,103 837,130 544,130",
+						},
+						{
+							href: "evernote:///view/8220413/s75/20a86aa7-f080-d2c1-acf1-2b2d101050d8/20a86aa7-f080-d2c1-acf1-2b2d101050d8/",
+							tags: [],
+							shape: "polygon",
+							coords: "425,921 661,921 661,948 425,948",
+						},
+						{
+							href: "evernote:///view/8220413/s75/2bdc9b3a-001e-4f49-9d8e-71c1efa3bffb/2bdc9b3a-001e-4f49-9d8e-71c1efa3bffb/",
+							tags: [],
+							shape: "polygon",
+							coords: "691,773 970,773 970,800 691,800",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f30af2f0-039c-b410-e3a9-1077df4f05e3/f30af2f0-039c-b410-e3a9-1077df4f05e3/",
+							tags: [],
+							shape: "polygon",
+							coords: "691,810 998,810 998,837 691,837",
+						},
+						{
+							href: "evernote:///view/8220413/s75/0d795b4b-c2a1-4aed-b681-ea44e6216e73/0d795b4b-c2a1-4aed-b681-ea44e6216e73/",
+							tags: [],
+							shape: "polygon",
+							coords: "691,1032 823,1032 823,1059 691,1059",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fa73f491-b8bc-f5a8-e1df-abbfd4d121d9/fa73f491-b8bc-f5a8-e1df-abbfd4d121d9/",
+							tags: [],
+							shape: "polygon",
+							coords: "691,1069 1008,1069 1008,1096 691,1096",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('75F614FC-65E1-42F4-8C91-A6F239E3C66C')",
+							tags: [],
+							shape: "polygon",
+							coords: "630,258 911,258 911,287 630,287",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('9355D70D-F476-4F4E-A047-2A05925F179F')",
+							tags: [],
+							shape: "polygon",
+							coords: "630,297 765,297 765,326 630,326",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fc32d9bd-f51f-ca41-c5b8-121e866feeb7/fc32d9bd-f51f-ca41-c5b8-121e866feeb7/",
+							tags: [],
+							shape: "polygon",
+							coords: "795,311 1072,311 1072,338 795,338",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a979907e-8c52-42e6-8995-1ffa26cf2275/a979907e-8c52-42e6-8995-1ffa26cf2275/",
+							tags: [],
+							shape: "polygon",
+							coords: "544,103 837,103 837,130 544,130",
+						},
+						{
+							href: "evernote:///view/8220413/s75/20a86aa7-f080-d2c1-acf1-2b2d101050d8/20a86aa7-f080-d2c1-acf1-2b2d101050d8/",
+							tags: [],
+							shape: "polygon",
+							coords: "425,921 661,921 661,948 425,948",
+						}
+					]
+				},
+				{
+					title: "Aristotle; on the Soul 350 BC",
+					uuid: "A9E6C2CC-263C-4E48-BDB0-121A46704149",
+					tags: [],
+					image: "Contents/Aristotle;%20on%20the%20So-a9e6c2cc-263c-4e48-bdb0-121a46704149.png?nocache=744593444",
+					imageSize: { width: 1197.000000, height: 794.000000 },
+					thumbnail: "Contents/Aristotle;%20on%20the%20So-a9e6c2cc-263c-4e48-bdb0-121a46704149-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('4B7FE594-D934-45C6-9DB6-741BD8AF9E50')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,350 336,350 336,433 56,433",
+						}
+					]
+				},
+				{
+					title: "Liebniz:  Nature and Grace Based on Reason 1714",
+					uuid: "2EFC2955-0B2B-40D1-A17C-4088B1A4D523",
+					tags: [],
+					image: "Contents/Liebniz%20%20Nature%20and%20-2efc2955-0b2b-40d1-a17c-4088b1a4d523.png?nocache=744593444",
+					imageSize: { width: 1270.000000, height: 761.000000 },
+					thumbnail: "Contents/Liebniz%20%20Nature%20and%20-2efc2955-0b2b-40d1-a17c-4088b1a4d523-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('4B7FE594-D934-45C6-9DB6-741BD8AF9E50')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,284 336,284 336,466 56,466",
+						}
+					]
+				},
+				{
+					title: "James, Principles of Psych, Time",
+					uuid: "5163DCF1-1D87-4A78-B793-E74FE5DDA239",
+					tags: [],
+					image: "Contents/James,%20Principles%20of-5163dcf1-1d87-4a78-b793-e74fe5dda239.png?nocache=744593444",
+					imageSize: { width: 1872.000000, height: 1724.000000 },
+					thumbnail: "Contents/James,%20Principles%20of-5163dcf1-1d87-4a78-b793-e74fe5dda239-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('7BE8CBAB-E5A1-4707-AC16-BCA4A332616D')",
+							tags: [],
+							shape: "polygon",
+							coords: "45,799 540,799 540,915 45,915",
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "5. Application to meet the objective",
+			uuid: "A8CF5D32-EC1A-4EFD-9E52-CC918927564E",
+			tags: [],
+			thumbnail: "Contents/Foldera8-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "5. Meeting the objective?",
+					uuid: "CEE75394-79AB-42D9-9AE0-77314FC5BA75",
+					tags: [],
+					image: "Contents/5.%20Meeting%20the%20objec-cee75394-79ab-42d9-9ae0-77314fc5ba75.png?nocache=744593444",
+					imageSize: { width: 1090.000000, height: 261.000000 },
+					thumbnail: "Contents/5.%20Meeting%20the%20objec-cee75394-79ab-42d9-9ae0-77314fc5ba75-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('5C59A6C0-A7A7-4002-9174-100D3FCECE3D')",
+							tags: [],
+							shape: "polygon",
+							coords: "59,83 471,83 471,166 59,166",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('55974A27-C6AE-487F-AD91-6F0E39D26C60')",
+							tags: [],
+							shape: "polygon",
+							coords: "500,164 612,164 612,193 500,193",
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "Cross section themes",
+			uuid: "0BB547B8-5AE9-4AB6-83C2-DC6199F7D483",
+			tags: [],
+			thumbnail: "Contents/Folder0b-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "Great ideas",
+					uuid: "55974A27-C6AE-487F-AD91-6F0E39D26C60",
+					tags: [],
+					image: "Contents/Great%20ideas-55974a27-c6ae-487f-ad91-6f0e39d26c60.png?nocache=744593444",
+					imageSize: { width: 1127.000000, height: 1066.000000 },
+					thumbnail: "Contents/Great%20ideas-55974a27-c6ae-487f-ad91-6f0e39d26c60-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('7BE8CBAB-E5A1-4707-AC16-BCA4A332616D')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,250 264,250 264,300 56,300",
+						}
+					]
+				},
+				{
+					title: "Space, Time Motion",
+					uuid: "3C01527D-47F6-4301-B169-C941A9353DB3",
+					tags: [],
+					image: "Contents/Space,%20Time%20Motion-3c01527d-47f6-4301-b169-c941a9353db3.png?nocache=744593444",
+					imageSize: { width: 1265.000000, height: 1391.000000 },
+					thumbnail: "Contents/Space,%20Time%20Motion-3c01527d-47f6-4301-b169-c941a9353db3-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "evernote:///view/8220413/s75/814b2c56-82d7-465b-aeff-fc27c4a52dad/814b2c56-82d7-465b-aeff-fc27c4a52dad/",
+							tags: [],
+							shape: "polygon",
+							coords: "542,707 786,707 786,734 542,734",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7768b1fc-c53d-4639-8473-85e1cb518e67/7768b1fc-c53d-4639-8473-85e1cb518e67/",
+							tags: [],
+							shape: "polygon",
+							coords: "542,744 716,744 716,771 542,771",
+						},
+						{
+							href: "evernote:///view/8220413/s75/98f39589-a3a8-4231-a6ee-41449395b1d2/98f39589-a3a8-4231-a6ee-41449395b1d2/",
+							tags: [],
+							shape: "polygon",
+							coords: "394,967 550,967 550,994 394,994",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f7d956fe-97c1-d084-8030-acb1ab2c284b/f7d956fe-97c1-d084-8030-acb1ab2c284b/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,781 858,781 858,808 580,808",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e1ed682e-6e07-4d10-a3f2-5466f16784ac/e1ed682e-6e07-4d10-a3f2-5466f16784ac/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,818 710,818 710,845 580,845",
+						},
+						{
+							href: "evernote:///view/8220413/s75/acef88f1-4326-cab2-ad9a-78379d527d3d/acef88f1-4326-cab2-ad9a-78379d527d3d/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,855 810,855 810,882 580,882",
+						},
+						{
+							href: "evernote:///view/8220413/s75/55e4fb52-95f8-fdce-4e0d-f44559ea76e0/55e4fb52-95f8-fdce-4e0d-f44559ea76e0/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,892 817,892 817,919 580,919",
+						},
+						{
+							href: "evernote:///view/8220413/s75/da406e3c-3fa4-40dc-b303-f6f49228af71/da406e3c-3fa4-40dc-b303-f6f49228af71/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,929 883,929 883,956 580,956",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fb17917d-6349-4a95-bb1d-ee37b1630e85/fb17917d-6349-4a95-bb1d-ee37b1630e85/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,966 796,966 796,993 580,993",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('5163DCF1-1D87-4A78-B793-E74FE5DDA239')",
+							tags: [],
+							shape: "polygon",
+							coords: "580,1003 959,1003 959,1032 580,1032",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1c872eaa-2c41-41c0-bede-f24af1dfe189/1c872eaa-2c41-41c0-bede-f24af1dfe189/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,1042 862,1042 862,1069 580,1069",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f9a97669-fe5e-fee9-e63d-c26def250f08/f9a97669-fe5e-fee9-e63d-c26def250f08/",
+							tags: [],
+							shape: "polygon",
+							coords: "892,1042 1093,1042 1093,1069 892,1069",
+						},
+						{
+							href: "evernote:///view/8220413/s75/06e49983-b7a2-45a3-b738-d40a9bfd60dc/06e49983-b7a2-45a3-b738-d40a9bfd60dc/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,1079 841,1079 841,1106 580,1106",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f009dac2-6f39-40fc-b985-5e73433dc898/f009dac2-6f39-40fc-b985-5e73433dc898/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,1116 767,1116 767,1143 580,1143",
+						},
+						{
+							href: "evernote:///view/8220413/s75/37e9f004-84a0-ac48-720c-be12e68fa470/37e9f004-84a0-ac48-720c-be12e68fa470/",
+							tags: [],
+							shape: "polygon",
+							coords: "797,1116 1019,1116 1019,1143 797,1143",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bcc47c21-b903-473d-9e2d-82c3f147c19c/bcc47c21-b903-473d-9e2d-82c3f147c19c/",
+							tags: [],
+							shape: "polygon",
+							coords: "797,1126 1086,1126 1086,1153 797,1153",
+						},
+						{
+							href: "evernote:///view/8220413/s75/c4d1049a-1b57-4e35-978a-f418407b37f7/c4d1049a-1b57-4e35-978a-f418407b37f7/",
+							tags: [],
+							shape: "polygon",
+							coords: "580,1153 859,1153 859,1180 580,1180",
+						},
+						{
+							href: "evernote:///view/8220413/s75/3daf7bd8-ab48-4eae-8c35-bc547a5f4ae5/3daf7bd8-ab48-4eae-8c35-bc547a5f4ae5/",
+							tags: [],
+							shape: "polygon",
+							coords: "476,1238 602,1238 602,1265 476,1265",
+						},
+						{
+							href: "evernote:///view/8220413/s75/29faed48-165c-42b4-b8fe-49fd8d26b316/29faed48-165c-42b4-b8fe-49fd8d26b316/",
+							tags: [],
+							shape: "polygon",
+							coords: "632,1238 950,1238 950,1265 632,1265",
+						},
+						{
+							href: "evernote:///view/8220413/s75/240d80e5-45da-4814-bb43-888f2e5d46aa/240d80e5-45da-4814-bb43-888f2e5d46aa/",
+							tags: [],
+							shape: "polygon",
+							coords: "632,1248 1140,1248 1140,1275 632,1275",
+						},
+						{
+							href: "evernote:///view/8220413/s75/67a4a9d7-2339-4fbc-8e7e-8a0517e12512/67a4a9d7-2339-4fbc-8e7e-8a0517e12512/",
+							tags: [],
+							shape: "polygon",
+							coords: "632,1258 1177,1258 1177,1285 632,1285",
+						},
+						{
+							href: "evernote:///view/8220413/s75/83657a69-2690-4d84-a669-d96b60898a6b/83657a69-2690-4d84-a669-d96b60898a6b/",
+							tags: [],
+							shape: "polygon",
+							coords: "632,1268 920,1268 920,1295 632,1295",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1002632a-ee82-47f5-b21b-428612a9b580/1002632a-ee82-47f5-b21b-428612a9b580/",
+							tags: [],
+							shape: "polygon",
+							coords: "476,1275 740,1275 740,1302 476,1302",
+						},
+						{
+							href: "evernote:///view/8220413/s75/abf76aa1-eb43-e4af-f247-0e8b1dea8ef5/abf76aa1-eb43-e4af-f247-0e8b1dea8ef5/",
+							tags: [],
+							shape: "polygon",
+							coords: "770,1275 1014,1275 1014,1302 770,1302",
+						},
+						{
+							href: "evernote:///view/8220413/s75/21480d1a-f236-4fec-8763-52b144f8e507/21480d1a-f236-4fec-8763-52b144f8e507/",
+							tags: [],
+							shape: "polygon",
+							coords: "476,1312 686,1312 686,1339 476,1339",
+						},
+						{
+							href: "evernote:///view/8220413/s75/003f8cb4-e24e-442a-8d2b-ce83b1afec41/003f8cb4-e24e-442a-8d2b-ce83b1afec41/",
+							tags: [],
+							shape: "polygon",
+							coords: "493,549 712,549 712,576 493,576",
+						},
+						{
+							href: "evernote:///view/8220413/s75/4caa70b7-4136-4277-b03d-723bd6594a98/4caa70b7-4136-4277-b03d-723bd6594a98/",
+							tags: [],
+							shape: "polygon",
+							coords: "742,549 974,549 974,576 742,576",
+						},
+						{
+							href: "evernote:///view/8220413/s75/406f747f-0436-d8bb-94ce-8d6faf8740f8/406f747f-0436-d8bb-94ce-8d6faf8740f8/",
+							tags: [],
+							shape: "polygon",
+							coords: "742,559 1244,559 1244,586 742,586",
+						},
+						{
+							href: "evernote:///view/8220413/s75/d5064e5e-6108-4686-b57c-0ffbc4902635/d5064e5e-6108-4686-b57c-0ffbc4902635/",
+							tags: [],
+							shape: "polygon",
+							coords: "394,1190 616,1190 616,1217 394,1217",
+						},
+						{
+							href: "evernote:///view/8220413/s75/33174a30-677c-0bec-502f-2423ec1ab92c/33174a30-677c-0bec-502f-2423ec1ab92c/",
+							tags: [],
+							shape: "polygon",
+							coords: "646,1190 836,1190 836,1217 646,1217",
+						},
+						{
+							href: "evernote:///view/8220413/s75/be67bf06-3ed0-449e-a768-af8463e77810/be67bf06-3ed0-449e-a768-af8463e77810/",
+							tags: [],
+							shape: "polygon",
+							coords: "646,1200 938,1200 938,1227 646,1227",
+						},
+						{
+							href: "evernote:///view/8220413/s75/66c8da22-131c-8adc-5462-bcede366102b/66c8da22-131c-8adc-5462-bcede366102b/",
+							tags: [],
+							shape: "polygon",
+							coords: "646,1210 793,1210 793,1237 646,1237",
+						},
+						{
+							href: "evernote:///view/8220413/s75/4c1dd9ad-ec0d-d77c-c6cf-f63717f56509/4c1dd9ad-ec0d-d77c-c6cf-f63717f56509/",
+							tags: [],
+							shape: "polygon",
+							coords: "646,1220 800,1220 800,1247 646,1247",
+						},
+						{
+							href: "evernote:///view/8220413/s75/2aface8e-737b-413d-88fe-bfe0ad96858f/2aface8e-737b-413d-88fe-bfe0ad96858f/",
+							tags: [],
+							shape: "polygon",
+							coords: "411,92 591,92 591,119 411,119",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cf16014b-56d0-4859-e3b9-5fb921c2c871/cf16014b-56d0-4859-e3b9-5fb921c2c871/",
+							tags: [],
+							shape: "polygon",
+							coords: "621,39 821,39 821,66 621,66",
+						},
+						{
+							href: "evernote:///view/8220413/s75/71053a76-4fdf-13e1-bf82-4a8075bcee1a/71053a76-4fdf-13e1-bf82-4a8075bcee1a/",
+							tags: [],
+							shape: "polygon",
+							coords: "411,324 699,324 699,351 411,351",
+						},
+						{
+							href: "evernote:///view/8220413/s75/178677c5-8531-b28f-8dd0-d79f8b077f74/178677c5-8531-b28f-8dd0-d79f8b077f74/",
+							tags: [],
+							shape: "polygon",
+							coords: "621,145 842,145 842,172 621,172",
+						}
+					]
+				},
+				{
+					title: "Thermodynamics and Semantics",
+					uuid: "E7018A33-EA27-44A1-A73D-41F77CB136CA",
+					tags: [],
+					image: "Contents/Thermodynamics%20and%20S-e7018a33-ea27-44a1-a73d-41f77cb136ca.png?nocache=744593444",
+					imageSize: { width: 1009.000000, height: 739.000000 },
+					thumbnail: "Contents/Thermodynamics%20and%20S-e7018a33-ea27-44a1-a73d-41f77cb136ca-Thumb.png?nocache=744593444",
+					childHierarchy: [
+						{
+							title: "Themo and semantics text",
+							uuid: "F4228064-CFA8-4C73-8841-8C2238F125F4",
+							tags: [],
+							image: "Contents/Themo%20and%20semantics%20-f4228064-cfa8-4c73-8841-8c2238f125f4.png?nocache=744593444",
+							imageSize: { width: 672.000000, height: 1835.000000 },
+							thumbnail: "Contents/Themo%20and%20semantics%20-f4228064-cfa8-4c73-8841-8c2238f125f4-Thumb.png?nocache=744593444"
+						}
+					]
+				},
+				{
+					title: "Math",
+					uuid: "34417F09-381B-4DCC-9652-512197D40747",
+					tags: [],
+					image: "Contents/Math-34417f09-381b-4dcc-9652-512197d40747.png?nocache=744593444",
+					imageSize: { width: 1243.000000, height: 632.000000 },
+					thumbnail: "Contents/Math-34417f09-381b-4dcc-9652-512197d40747-Thumb.png?nocache=744593444"
+				},
+				{
+					title: "Geometric Algebra",
+					uuid: "B2045E3B-BDAE-43BE-BB36-A1BF1ED754D9",
+					tags: [],
+					image: "Contents/Geometric%20Algebra-b2045e3b-bdae-43be-bb36-a1bf1ed754d9.png?nocache=744593444",
+					imageSize: { width: 963.000000, height: 841.000000 },
+					thumbnail: "Contents/Geometric%20Algebra-b2045e3b-bdae-43be-bb36-a1bf1ed754d9-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "Documents/image-17f12abd-bbcc-452c-8e57-adb46489d963/image.png",
+							tags: [],
+							shape: "polygon",
+							coords: "36,36 927,36 927,805 36,805",
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "References",
+			uuid: "E961113F-4946-4BB3-8FBB-526DCE6FFB9B",
+			tags: [],
+			thumbnail: "Contents/Foldere9-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "Locke: Essay on Human Understanding",
+					uuid: "14BCE1E3-98A5-46A0-BC5B-5BBA74D4F0A0",
+					tags: [],
+					image: "Contents/Locke%20Essay%20on%20Human-14bce1e3-98a5-46a0-bc5b-5bba74d4f0a0.png?nocache=744593444",
+					imageSize: { width: 1153.000000, height: 1186.000000 },
+					thumbnail: "Contents/Locke%20Essay%20on%20Human-14bce1e3-98a5-46a0-bc5b-5bba74d4f0a0-Thumb.png?nocache=744593444"
+				},
+				{
+					title: "Vector analysis history",
+					uuid: "CE9B4FB1-7BAC-4F22-A57C-327B5991EECD",
+					tags: [],
+					image: "Contents/Vector%20analysis%20hist-ce9b4fb1-7bac-4f22-a57c-327b5991eecd.png?nocache=744593444",
+					imageSize: { width: 1562.000000, height: 1166.000000 },
+					thumbnail: "Contents/Vector%20analysis%20hist-ce9b4fb1-7bac-4f22-a57c-327b5991eecd-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "evernote:///view/8220413/s75/359f6e3b-93a2-1a60-7040-6f61eaaedffb/359f6e3b-93a2-1a60-7040-6f61eaaedffb/",
+							tags: [],
+							shape: "polygon",
+							coords: "821,497 1087,497 1087,524 821,524",
+						},
+						{
+							href: "evernote:///view/8220413/s75/42fe4a13-3e98-72bb-145a-4fba25ce4189/42fe4a13-3e98-72bb-145a-4fba25ce4189/",
+							tags: [],
+							shape: "polygon",
+							coords: "1233,452 1561,452 1561,479 1233,479",
+						},
+						{
+							href: "evernote:///view/8220413/s75/d709038b-0c00-0f1e-4832-152df77274c9/d709038b-0c00-0f1e-4832-152df77274c9/",
+							tags: [],
+							shape: "polygon",
+							coords: "761,578 1058,578 1058,605 761,605",
+						},
+						{
+							href: "evernote:///view/8220413/s75/99d31607-0c65-e763-1250-c1ec924b5b1f/99d31607-0c65-e763-1250-c1ec924b5b1f/",
+							tags: [],
+							shape: "polygon",
+							coords: "1196,676 1446,676 1446,703 1196,703",
+						},
+						{
+							href: "evernote:///view/8220413/s75/76dfc4fa-26f8-46a9-a3e1-f99eda1d06c7/76dfc4fa-26f8-46a9-a3e1-f99eda1d06c7/",
+							tags: [],
+							shape: "polygon",
+							coords: "1158,623 1531,623 1531,650 1158,650",
+						},
+						{
+							href: "evernote:///view/8220413/s75/d8c435e1-5b91-441a-ad5e-7ceb23a8fb44/d8c435e1-5b91-441a-ad5e-7ceb23a8fb44/",
+							tags: [],
+							shape: "polygon",
+							coords: "966,989 1271,989 1271,1016 966,1016",
+						}
+					]
+				},
+				{
+					title: "Calculus Gallery",
+					uuid: "7FB35E8E-1F67-4A2A-A5F8-01EE102291A0",
+					tags: [],
+					image: "Contents/Calculus%20Gallery-7fb35e8e-1f67-4a2a-a5f8-01ee102291a0.png?nocache=744593444",
+					imageSize: { width: 1191.000000, height: 1459.000000 },
+					thumbnail: "Contents/Calculus%20Gallery-7fb35e8e-1f67-4a2a-a5f8-01ee102291a0-Thumb.png?nocache=744593444"
+				},
+				{
+					title: "Maxwell: Math of Physical Quantities 1871",
+					uuid: "4422F4BC-29C2-46EF-9B0B-FFB58ECD6CFA",
+					tags: [],
+					image: "Contents/Maxwell%20Math%20of%20Phys-4422f4bc-29c2-46ef-9b0b-ffb58ecd6cfa.png?nocache=744593444",
+					imageSize: { width: 1284.000000, height: 1164.000000 },
+					thumbnail: "Contents/Maxwell%20Math%20of%20Phys-4422f4bc-29c2-46ef-9b0b-ffb58ecd6cfa-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "Documents/image-8696749f-cd1e-4893-b83f-1ecbcf282a19/image.png",
+							tags: [],
+							shape: "polygon",
+							coords: "804,978 1056,978 1056,1057 804,1057",
+						},
+						{
+							href: "evernote:///view/8220413/s75/359f6e3b-93a2-1a60-7040-6f61eaaedffb/359f6e3b-93a2-1a60-7040-6f61eaaedffb/",
+							tags: [],
+							shape: "polygon",
+							coords: "452,1077 734,1077 734,1104 452,1104",
+						}
+					]
+				},
+				{
+					title: "Charles Peirce",
+					uuid: "9355D70D-F476-4F4E-A047-2A05925F179F",
+					tags: [],
+					image: "Contents/Charles%20Peirce-9355d70d-f476-4f4e-a047-2a05925f179f.png?nocache=744593444",
+					imageSize: { width: 1611.000000, height: 1653.000000 },
+					thumbnail: "Contents/Charles%20Peirce-9355d70d-f476-4f4e-a047-2a05925f179f-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('92C2E373-4F4E-4F4B-895C-41ACEA1BE596')",
+							tags: [],
+							shape: "polygon",
+							coords: "56,796 301,796 301,846 56,846",
+						}
+					]
+				}
+			]
+		},
+		{
+			title: "Overviews old",
+			uuid: "80BA7F37-F6CF-4FC8-8E41-378EBFB80E32",
+			tags: [],
+			thumbnail: "Contents/Folder80-Thumb.png?nocache=744593444",
+			childHierarchy: [
+				{
+					title: "Top level outline v4",
+					uuid: "B69C9A3E-1E55-49B8-852C-2ACE3C28F300",
+					tags: [],
+					image: "Contents/Top%20level%20outline%20v4-b69c9a3e-1e55-49b8-852c-2ace3c28f300.png?nocache=744593444",
+					imageSize: { width: 1442.000000, height: 941.000000 },
+					thumbnail: "Contents/Top%20level%20outline%20v4-b69c9a3e-1e55-49b8-852c-2ace3c28f300-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "javascript:goToSlideWithUUID('EC283BFA-DDF3-463C-8809-BAD7A94A5D45')",
+							tags: [],
+							shape: "polygon",
+							coords: "302,93 616,93 616,132 302,132",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('4B7FE594-D934-45C6-9DB6-741BD8AF9E50')",
+							tags: [],
+							shape: "polygon",
+							coords: "302,663 670,663 670,730 302,730",
+						},
+						{
+							href: "evernote:///view/8220413/s75/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/d9f2fda2-52cd-dad5-c7ac-ee468825dd35/",
+							tags: [],
+							shape: "polygon",
+							coords: "1066,97 1238,97 1238,126 1066,126",
+						},
+						{
+							href: "evernote:///view/8220413/s75/8e7f6aff-37ea-4cae-bd25-320cae1d7fe4/8e7f6aff-37ea-4cae-bd25-320cae1d7fe4/",
+							tags: [],
+							shape: "polygon",
+							coords: "829,78 1028,78 1028,105 829,105",
+						},
+						{
+							href: "evernote:///view/8220413/s75/ec9ed4c8-ea46-337f-39b5-4d70b00c3848/ec9ed4c8-ea46-337f-39b5-4d70b00c3848/",
+							tags: [],
+							shape: "polygon",
+							coords: "1013,87 1230,87 1230,116 1013,116",
+						},
+						{
+							href: "evernote:///view/8220413/s75/92402f99-f791-4e5b-a9b0-d0489e5db5b5/92402f99-f791-4e5b-a9b0-d0489e5db5b5/",
+							tags: [],
+							shape: "polygon",
+							coords: "849,795 979,795 979,822 849,822",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7511a42a-d1b4-43d1-8adb-371223579b13/7511a42a-d1b4-43d1-8adb-371223579b13/",
+							tags: [],
+							shape: "polygon",
+							coords: "977,672 1123,672 1123,699 977,699",
+						},
+						{
+							href: "evernote:///view/8220413/s75/0d795b4b-c2a1-4aed-b681-ea44e6216e73/0d795b4b-c2a1-4aed-b681-ea44e6216e73/",
+							tags: [],
+							shape: "polygon",
+							coords: "977,692 1125,692 1125,719 977,719",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a9228606-30f5-4d8b-b657-ca0a8580e5f4/a9228606-30f5-4d8b-b657-ca0a8580e5f4/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,681 1495,681 1495,710 1104,710",
+						},
+						{
+							href: "evernote:///view/8220413/s75/6178519b-eb41-a1d8-bf24-8369aeb458c9/6178519b-eb41-a1d8-bf24-8369aeb458c9/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,691 1322,691 1322,720 1104,720",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a92b81b6-7e61-4039-911a-04a5ea221676/a92b81b6-7e61-4039-911a-04a5ea221676/",
+							tags: [],
+							shape: "polygon",
+							coords: "1153,672 1417,672 1417,699 1153,699",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5f5f96c3-0dc0-ba01-182a-61f76c6c4d0a/5f5f96c3-0dc0-ba01-182a-61f76c6c4d0a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,662 1228,662 1228,689 1065,689",
+						},
+						{
+							href: "evernote:///view/8220413/s75/01e94223-bcb0-4043-8b10-a5b27d617588/01e94223-bcb0-4043-8b10-a5b27d617588/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,754 1405,754 1405,781 1197,781",
+						},
+						{
+							href: "evernote:///view/8220413/s75/34d31034-4f58-ab86-a20a-8ee671d58a6b/34d31034-4f58-ab86-a20a-8ee671d58a6b/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,754 1380,754 1380,781 1197,781",
+						},
+						{
+							href: "evernote:///view/8220413/s75/06767b76-4fd6-4fb5-9f78-1a7d75d3bbf0/06767b76-4fd6-4fb5-9f78-1a7d75d3bbf0/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,701 1365,701 1365,730 1104,730",
+						},
+						{
+							href: "evernote:///view/8220413/s75/59280cfb-827b-40d2-88bb-2c4f54c26b3d/59280cfb-827b-40d2-88bb-2c4f54c26b3d/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,764 1476,764 1476,791 1197,791",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5912ca87-a577-51f6-64f4-362434da545c/5912ca87-a577-51f6-64f4-362434da545c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,711 1371,711 1371,740 1104,740",
+						},
+						{
+							href: "evernote:///view/8220413/s75/87f841cc-2cfe-edd6-0d21-604f4ec8889f/87f841cc-2cfe-edd6-0d21-604f4ec8889f/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,721 1481,721 1481,750 1104,750",
+						},
+						{
+							href: "evernote:///view/8220413/s75/472d4d72-3071-501e-0d35-3c47508de462/472d4d72-3071-501e-0d35-3c47508de462/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,731 1365,731 1365,760 1104,760",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fa73f491-b8bc-f5a8-e1df-abbfd4d121d9/fa73f491-b8bc-f5a8-e1df-abbfd4d121d9/",
+							tags: [],
+							shape: "polygon",
+							coords: "977,702 1310,702 1310,729 977,729",
+						},
+						{
+							href: "evernote:///view/8220413/s75/edb3a13b-a19f-2963-ad6c-d12db7b22d54/edb3a13b-a19f-2963-ad6c-d12db7b22d54/",
+							tags: [],
+							shape: "polygon",
+							coords: "1104,741 1514,741 1514,770 1104,770",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a04d8e1a-01a7-0ee5-da78-87e7946c83e9/a04d8e1a-01a7-0ee5-da78-87e7946c83e9/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,672 1228,672 1228,699 1065,699",
+						},
+						{
+							href: "evernote:///view/8220413/s75/2ac37c55-6c71-48ff-a211-f504a6f72710/2ac37c55-6c71-48ff-a211-f504a6f72710/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,682 1609,682 1609,709 1065,709",
+						},
+						{
+							href: "evernote:///view/8220413/s75/3f68d6df-42fc-12c6-75c5-887c974e6d32/3f68d6df-42fc-12c6-75c5-887c974e6d32/",
+							tags: [],
+							shape: "polygon",
+							coords: "1153,682 1390,682 1390,709 1153,709",
+						},
+						{
+							href: "evernote:///view/8220413/s75/71b07c23-bcb9-93ff-d99b-2f41f1a02b78/71b07c23-bcb9-93ff-d99b-2f41f1a02b78/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,774 1539,774 1539,801 1197,801",
+						},
+						{
+							href: "evernote:///view/8220413/s75/fce6aafd-33ff-6d92-760c-f51374d7a733/fce6aafd-33ff-6d92-760c-f51374d7a733/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,784 1454,784 1454,811 1197,811",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f5f2c692-35c3-8aaf-2f77-d1b286f8c26e/f5f2c692-35c3-8aaf-2f77-d1b286f8c26e/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,794 1433,794 1433,821 1197,821",
+						},
+						{
+							href: "evernote:///view/8220413/s75/0f2a5fbd-757d-b954-852c-bc3844e396f6/0f2a5fbd-757d-b954-852c-bc3844e396f6/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,774 1521,774 1521,801 1273,801",
+						},
+						{
+							href: "evernote:///view/8220413/s75/396647f4-29ff-6ba8-c650-48bbf8399387/396647f4-29ff-6ba8-c650-48bbf8399387/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,784 1599,784 1599,811 1273,811",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e6631670-f353-499b-986b-3776f6a78b82/e6631670-f353-499b-986b-3776f6a78b82/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,794 1507,794 1507,821 1273,821",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5b0072c9-a30f-6437-2a18-8b8561e35b88/5b0072c9-a30f-6437-2a18-8b8561e35b88/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,804 1553,804 1553,831 1273,831",
+						},
+						{
+							href: "evernote:///view/8220413/s75/21756ed5-9b75-41a8-b05a-726842bdbdb5/21756ed5-9b75-41a8-b05a-726842bdbdb5/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,814 1656,814 1656,841 1273,841",
+						},
+						{
+							href: "evernote:///view/8220413/s75/88957e29-a78b-378d-659e-70fa516940a6/88957e29-a78b-378d-659e-70fa516940a6/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,824 1550,824 1550,851 1273,851",
+						},
+						{
+							href: "evernote:///view/8220413/s75/0b9bd6f4-5ee3-4bdf-a8e2-b0fd80ca21ad/0b9bd6f4-5ee3-4bdf-a8e2-b0fd80ca21ad/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,834 1508,834 1508,861 1273,861",
+						},
+						{
+							href: "evernote:///view/8220413/s75/b608bae1-b9f4-4f64-b78f-c9c11e738ccb/b608bae1-b9f4-4f64-b78f-c9c11e738ccb/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,702 1301,702 1301,729 1065,729",
+						},
+						{
+							href: "evernote:///view/8220413/s75/79455c67-7897-4b47-ae49-acb1b2524205/79455c67-7897-4b47-ae49-acb1b2524205/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,712 1288,712 1288,739 1065,739",
+						},
+						{
+							href: "evernote:///view/8220413/s75/18f09289-e9dd-5759-df46-43dae3045fc0/18f09289-e9dd-5759-df46-43dae3045fc0/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,722 1233,722 1233,749 1065,749",
+						},
+						{
+							href: "evernote:///view/8220413/s75/575fca1f-3ba7-442e-a1d5-4b6be25f5496/575fca1f-3ba7-442e-a1d5-4b6be25f5496/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,732 1321,732 1321,759 1065,759",
+						},
+						{
+							href: "evernote:///view/8220413/s75/01f20ec1-de3f-d9c5-2bcd-bcce41c00da8/01f20ec1-de3f-d9c5-2bcd-bcce41c00da8/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,742 1250,742 1250,769 1065,769",
+						},
+						{
+							href: "evernote:///view/8220413/s75/b8140fda-a44d-7afa-f278-756a18ca7348/b8140fda-a44d-7afa-f278-756a18ca7348/",
+							tags: [],
+							shape: "polygon",
+							coords: "1153,692 1369,692 1369,719 1153,719",
+						},
+						{
+							href: "evernote:///view/8220413/s75/91c8ff5d-4809-1284-7a1e-8ce258aa89b0/91c8ff5d-4809-1284-7a1e-8ce258aa89b0/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,752 1452,752 1452,779 1065,779",
+						},
+						{
+							href: "evernote:///view/8220413/s75/064a6a90-407e-909e-3cfa-62663280f961/064a6a90-407e-909e-3cfa-62663280f961/",
+							tags: [],
+							shape: "polygon",
+							coords: "1065,762 1196,762 1196,789 1065,789",
+						},
+						{
+							href: "evernote:///view/8220413/s75/652bb9bc-3c0b-4f37-b394-2930a6151d4c/652bb9bc-3c0b-4f37-b394-2930a6151d4c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1153,702 1393,702 1393,729 1153,729",
+						},
+						{
+							href: "evernote:///view/8220413/s75/3c3fbf98-b8de-4e1b-8b9b-08678387a1c4/3c3fbf98-b8de-4e1b-8b9b-08678387a1c4/",
+							tags: [],
+							shape: "polygon",
+							coords: "1016,641 1237,641 1237,668 1016,668",
+						},
+						{
+							href: "evernote:///view/8220413/s75/79455c67-7897-4b47-ae49-acb1b2524205/79455c67-7897-4b47-ae49-acb1b2524205/",
+							tags: [],
+							shape: "polygon",
+							coords: "1016,651 1239,651 1239,678 1016,678",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bef9a682-68e1-475e-a2aa-20c5bf535693/bef9a682-68e1-475e-a2aa-20c5bf535693/",
+							tags: [],
+							shape: "polygon",
+							coords: "1016,661 1257,661 1257,688 1016,688",
+						},
+						{
+							href: "evernote:///view/8220413/s75/52a4d0f8-d2c1-4d9b-b51c-caa9767677c7/52a4d0f8-d2c1-4d9b-b51c-caa9767677c7/",
+							tags: [],
+							shape: "polygon",
+							coords: "1273,844 1528,844 1528,871 1273,871",
+						},
+						{
+							href: "evernote:///view/8220413/s75/2b5fb93a-8c8c-49f0-8c13-7f81a9e4c6ec/2b5fb93a-8c8c-49f0-8c13-7f81a9e4c6ec/",
+							tags: [],
+							shape: "polygon",
+							coords: "899,590 1096,590 1096,617 899,617",
+						},
+						{
+							href: "https://en.wikipedia.org/wiki/Semantic_Web",
+							tags: [],
+							shape: "polygon",
+							coords: "935,784 1125,784 1125,811 935,811",
+						},
+						{
+							href: "evernote:///view/8220413/s75/191dafd2-a643-4e4b-936a-2a6e6da76e94/191dafd2-a643-4e4b-936a-2a6e6da76e94/",
+							tags: [],
+							shape: "polygon",
+							coords: "935,794 1152,794 1152,821 935,821",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('CEE75394-79AB-42D9-9AE0-77314FC5BA75')",
+							tags: [],
+							shape: "polygon",
+							coords: "302,834 736,834 736,873 302,873",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('564D5FC4-0DB1-4693-8560-33E753527CAD')",
+							tags: [],
+							shape: "polygon",
+							coords: "302,253 670,253 670,320 302,320",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cf16014b-56d0-4859-e3b9-5fb921c2c871/cf16014b-56d0-4859-e3b9-5fb921c2c871/",
+							tags: [],
+							shape: "polygon",
+							coords: "1041,232 1257,232 1257,259 1041,259",
+						},
+						{
+							href: "evernote:///view/8220413/s75/baf26740-bd6a-8fe1-f52e-d6760486276a/baf26740-bd6a-8fe1-f52e-d6760486276a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1109,242 1240,242 1240,269 1109,269",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a5d02141-f515-45a7-84e4-984767a0ca46/a5d02141-f515-45a7-84e4-984767a0ca46/",
+							tags: [],
+							shape: "polygon",
+							coords: "1109,252 1264,252 1264,279 1109,279",
+						},
+						{
+							href: "evernote:///view/8220413/s75/b8f540f4-51ea-4c42-9324-9834e5c6c05c/b8f540f4-51ea-4c42-9324-9834e5c6c05c/",
+							tags: [],
+							shape: "polygon",
+							coords: "945,252 1141,252 1141,279 945,279",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e9cd9ea5-90a5-4138-a516-a6843fc95910/e9cd9ea5-90a5-4138-a516-a6843fc95910/",
+							tags: [],
+							shape: "polygon",
+							coords: "1171,252 1316,252 1316,279 1171,279",
+						},
+						{
+							href: "evernote:///view/8220413/s75/6818a7aa-5d0e-3871-4140-a0ba852fc6d0/6818a7aa-5d0e-3871-4140-a0ba852fc6d0/",
+							tags: [],
+							shape: "polygon",
+							coords: "1146,262 1374,262 1374,289 1146,289",
+						},
+						{
+							href: "evernote:///view/8220413/s75/13cadda7-aed0-bdce-e853-ffb89ab2f088/13cadda7-aed0-bdce-e853-ffb89ab2f088/",
+							tags: [],
+							shape: "polygon",
+							coords: "1146,272 1428,272 1428,299 1146,299",
+						},
+						{
+							href: "evernote:///view/8220413/s75/caefe920-299f-4047-85c9-4cb06542290c/caefe920-299f-4047-85c9-4cb06542290c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1146,282 1320,282 1320,309 1146,309",
+						},
+						{
+							href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+							tags: [],
+							shape: "polygon",
+							coords: "1041,272 1321,272 1321,299 1041,299",
+						},
+						{
+							href: "evernote:///view/8220413/s75/20859bf0-14a9-4bf3-8f53-96567eeb517c/20859bf0-14a9-4bf3-8f53-96567eeb517c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1423,273 1614,273 1614,300 1423,300",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cdef9d53-edea-4644-aee9-d355caa49158/cdef9d53-edea-4644-aee9-d355caa49158/",
+							tags: [],
+							shape: "polygon",
+							coords: "1423,283 1778,283 1778,310 1423,310",
+						},
+						{
+							href: "evernote:///view/8220413/s75/cf33a302-0ff9-4e97-9675-ad01329a20eb/cf33a302-0ff9-4e97-9675-ad01329a20eb/",
+							tags: [],
+							shape: "polygon",
+							coords: "1808,303 2004,303 2004,330 1808,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e5859d9c-6629-403d-a69a-f37aac0bf253/e5859d9c-6629-403d-a69a-f37aac0bf253/",
+							tags: [],
+							shape: "polygon",
+							coords: "2034,303 2382,303 2382,330 2034,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/24137d78-95b9-4354-beba-362c8bfad9fc/24137d78-95b9-4354-beba-362c8bfad9fc/",
+							tags: [],
+							shape: "polygon",
+							coords: "1808,313 1994,313 1994,340 1808,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/61d580d6-c66e-4fdc-b4a9-3c392c7e071d/",
+							tags: [],
+							shape: "polygon",
+							coords: "2024,313 2288,313 2288,340 2024,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/202801ef-20e0-4aa6-831b-df6025134068/202801ef-20e0-4aa6-831b-df6025134068/",
+							tags: [],
+							shape: "polygon",
+							coords: "1423,293 1779,293 1779,320 1423,320",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5e0a0618-5b0f-4e57-9836-1a719a2f7399/5e0a0618-5b0f-4e57-9836-1a719a2f7399/",
+							tags: [],
+							shape: "polygon",
+							coords: "1809,303 1971,303 1971,330 1809,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+							tags: [],
+							shape: "polygon",
+							coords: "1809,313 1950,313 1950,340 1809,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/74a002a6-ae6f-4e41-bfeb-c38834729394/74a002a6-ae6f-4e41-bfeb-c38834729394/",
+							tags: [],
+							shape: "polygon",
+							coords: "1185,283 1407,283 1407,310 1185,310",
+						},
+						{
+							href: "evernote:///view/8220413/s75/a45ef130-7878-4010-b600-04737db3c07a/a45ef130-7878-4010-b600-04737db3c07a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1437,283 1796,283 1796,310 1437,310",
+						},
+						{
+							href: "evernote:///view/8220413/s75/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/86c62bcb-fcdc-4a42-94e2-b3c357599a6a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1437,293 1681,293 1681,320 1437,320",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dc2c2b6d-7619-0cd5-1438-2e5237762b65/dc2c2b6d-7619-0cd5-1438-2e5237762b65/",
+							tags: [],
+							shape: "polygon",
+							coords: "1711,293 1948,293 1948,320 1711,320",
+						},
+						{
+							href: "evernote:///view/8220413/s75/340b3b8c-80ad-9629-f742-1a47538d927e/340b3b8c-80ad-9629-f742-1a47538d927e/",
+							tags: [],
+							shape: "polygon",
+							coords: "1437,303 1806,303 1806,330 1437,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/195ae449-747a-4b90-9373-4336da624700/195ae449-747a-4b90-9373-4336da624700/",
+							tags: [],
+							shape: "polygon",
+							coords: "1692,293 2019,293 2019,320 1692,320",
+						},
+						{
+							href: "evernote:///view/8220413/s75/116cdd9a-757b-4be7-9492-5a40fcaca102/116cdd9a-757b-4be7-9492-5a40fcaca102/",
+							tags: [],
+							shape: "polygon",
+							coords: "1692,303 1972,303 1972,330 1692,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f3ade69a-984c-4946-95dd-96239d8faf03/f3ade69a-984c-4946-95dd-96239d8faf03/",
+							tags: [],
+							shape: "polygon",
+							coords: "1692,313 1917,313 1917,340 1692,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/e4fc5d93-a815-46a0-aa06-2c3d5364a407/e4fc5d93-a815-46a0-aa06-2c3d5364a407/",
+							tags: [],
+							shape: "polygon",
+							coords: "1692,323 1932,323 1932,350 1692,350",
+						},
+						{
+							href: "evernote:///view/8220413/s75/02141750-aeee-4bfb-83bc-4a8b0c7dc487/02141750-aeee-4bfb-83bc-4a8b0c7dc487/",
+							tags: [],
+							shape: "polygon",
+							coords: "1470,303 1681,303 1681,330 1470,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/1ee53e42-cf3f-29f4-fc32-d7fbf09dd62a/",
+							tags: [],
+							shape: "polygon",
+							coords: "1711,303 1981,303 1981,330 1711,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/788ed54e-3cca-4918-b6c3-5e5d78b42878/788ed54e-3cca-4918-b6c3-5e5d78b42878/",
+							tags: [],
+							shape: "polygon",
+							coords: "1711,313 1910,313 1910,340 1711,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/c205d82a-9fac-48c5-8ca4-49d70912240c/c205d82a-9fac-48c5-8ca4-49d70912240c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1711,323 1965,323 1965,350 1711,350",
+						},
+						{
+							href: "evernote:///view/8220413/s75/85711e51-a4e7-01d5-241c-7b340905e96c/85711e51-a4e7-01d5-241c-7b340905e96c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1711,333 1970,333 1970,360 1711,360",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bfefd30f-5c93-470c-8e0a-79482fab62be/bfefd30f-5c93-470c-8e0a-79482fab62be/",
+							tags: [],
+							shape: "polygon",
+							coords: "1711,343 1948,343 1948,370 1711,370",
+						},
+						{
+							href: "evernote:///view/8220413/s75/5665e21e-d780-4abb-a925-5cd443b32772/5665e21e-d780-4abb-a925-5cd443b32772/",
+							tags: [],
+							shape: "polygon",
+							coords: "1470,313 1684,313 1684,340 1470,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/003f8cb4-e24e-442a-8d2b-ce83b1afec41/003f8cb4-e24e-442a-8d2b-ce83b1afec41/",
+							tags: [],
+							shape: "polygon",
+							coords: "1281,303 1516,303 1516,330 1281,330",
+						},
+						{
+							href: "evernote:///view/8220413/s75/4caa70b7-4136-4277-b03d-723bd6594a98/4caa70b7-4136-4277-b03d-723bd6594a98/",
+							tags: [],
+							shape: "polygon",
+							coords: "1281,313 1479,313 1479,340 1281,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/406f747f-0436-d8bb-94ce-8d6faf8740f8/406f747f-0436-d8bb-94ce-8d6faf8740f8/",
+							tags: [],
+							shape: "polygon",
+							coords: "1281,323 1799,323 1799,350 1281,350",
+						},
+						{
+							href: "evernote:///view/8220413/s75/eda7e31d-12c8-44b1-921d-045e1c5edb38/eda7e31d-12c8-44b1-921d-045e1c5edb38/",
+							tags: [],
+							shape: "polygon",
+							coords: "1660,313 1969,313 1969,340 1660,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/7790efcb-f9bf-797e-add2-ba759891fc1c/7790efcb-f9bf-797e-add2-ba759891fc1c/",
+							tags: [],
+							shape: "polygon",
+							coords: "1999,313 2417,313 2417,340 1999,340",
+						},
+						{
+							href: "evernote:///view/8220413/s75/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/8a4609a8-45b7-4e4e-ae11-497ca5bf1259/",
+							tags: [],
+							shape: "polygon",
+							coords: "1660,323 1925,323 1925,350 1660,350",
+						},
+						{
+							href: "evernote:///view/8220413/s75/609006d3-829b-4103-b1c9-2e691c5cb938/609006d3-829b-4103-b1c9-2e691c5cb938/",
+							tags: [],
+							shape: "polygon",
+							coords: "1541,323 1810,323 1810,350 1541,350",
+						},
+						{
+							href: "evernote:///view/8220413/s75/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/1022cc12-0a0d-44ad-b212-3f8fdaef2fa7/",
+							tags: [],
+							shape: "polygon",
+							coords: "1702,333 1987,333 1987,360 1702,360",
+						},
+						{
+							href: "evernote:///view/8220413/s75/dd86263e-1b10-4098-97ec-d49560521a10/dd86263e-1b10-4098-97ec-d49560521a10/",
+							tags: [],
+							shape: "polygon",
+							coords: "1702,343 1843,343 1843,370 1702,370",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('7216E17B-90E2-4938-B44D-A7A1AA496A19')",
+							tags: [],
+							shape: "polygon",
+							coords: "844,364 1056,364 1056,393 844,393",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bbad8e98-84fd-52fc-2a89-1976ee5f0ca1/bbad8e98-84fd-52fc-2a89-1976ee5f0ca1/",
+							tags: [],
+							shape: "polygon",
+							coords: "883,201 1138,201 1138,228 883,228",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('284E1226-4C93-4CC7-8E81-8D66A41BD4E3')",
+							tags: [],
+							shape: "polygon",
+							coords: "302,448 670,448 670,515 302,515",
+						},
+						{
+							href: "evernote:///view/8220413/s75/76faa747-f95a-2c2d-19a4-d1225be85db6/76faa747-f95a-2c2d-19a4-d1225be85db6/",
+							tags: [],
+							shape: "polygon",
+							coords: "857,406 1186,406 1186,433 857,433",
+						},
+						{
+							href: "evernote:///view/8220413/s75/bfc0ede0-eee3-484f-90b5-b2e2b2bab87a/bfc0ede0-eee3-484f-90b5-b2e2b2bab87a/",
+							tags: [],
+							shape: "polygon",
+							coords: "857,426 1146,426 1146,453 857,453",
+						},
+						{
+							href: "evernote:///view/8220413/s75/0e13f721-9fb7-a721-505c-0ce32da0a75b/0e13f721-9fb7-a721-505c-0ce32da0a75b/",
+							tags: [],
+							shape: "polygon",
+							coords: "857,436 1267,436 1267,463 857,463",
+						},
+						{
+							href: "evernote:///view/8220413/s75/240d80e5-45da-4814-bb43-888f2e5d46aa/240d80e5-45da-4814-bb43-888f2e5d46aa/",
+							tags: [],
+							shape: "polygon",
+							coords: "857,456 1381,456 1381,483 857,483",
+						},
+						{
+							href: "evernote:///view/8220413/s75/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/99c2bbd5-2023-4b1f-8de0-6911e3c560b0/",
+							tags: [],
+							shape: "polygon",
+							coords: "897,447 1090,447 1090,474 897,474",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('32CC6256-6900-4468-9780-C2A0FE822555')",
+							tags: [],
+							shape: "polygon",
+							coords: "897,456 1101,456 1101,485 897,485",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('28DB5B66-B021-4665-AE49-18508E2C5EA2')",
+							tags: [],
+							shape: "polygon",
+							coords: "897,466 1032,466 1032,495 897,495",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('99124B45-BAE8-42A0-B37C-57873C06BBE2')",
+							tags: [],
+							shape: "polygon",
+							coords: "897,496 1141,496 1141,525 897,525",
+						},
+						{
+							href: "evernote:///view/8220413/s75/47b9393d-0187-bfcb-fe08-f7d4922aa1f7/47b9393d-0187-bfcb-fe08-f7d4922aa1f7/",
+							tags: [],
+							shape: "polygon",
+							coords: "904,498 1215,498 1215,525 904,525",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('6C25561E-E569-4C08-B1F0-A46AFA28D8B8')",
+							tags: [],
+							shape: "polygon",
+							coords: "904,507 1192,507 1192,536 904,536",
+						},
+						{
+							href: "evernote:///view/8220413/s75/f4516c3d-1120-0db3-6eeb-932cadd45ddc/f4516c3d-1120-0db3-6eeb-932cadd45ddc/",
+							tags: [],
+							shape: "polygon",
+							coords: "1074,518 1259,518 1259,545 1074,545",
+						},
+						{
+							href: "evernote:///view/8220413/s75/3587efd9-4ff1-f34b-daf8-f2208deea95f/3587efd9-4ff1-f34b-daf8-f2208deea95f/",
+							tags: [],
+							shape: "polygon",
+							coords: "1278,539 1549,539 1549,566 1278,566",
+						},
+						{
+							href: "evernote:///view/8220413/s75/281b908a-096d-42ed-a350-3f908734bea8/281b908a-096d-42ed-a350-3f908734bea8/",
+							tags: [],
+							shape: "polygon",
+							coords: "1278,549 1557,549 1557,576 1278,576",
+						},
+						{
+							href: "javascript:goToSlideWithUUID('55974A27-C6AE-487F-AD91-6F0E39D26C60')",
+							tags: [],
+							shape: "polygon",
+							coords: "766,838 900,838 900,869 766,869",
+						},
+						{
+							href: "evernote:///view/8220413/s75/01e94223-bcb0-4043-8b10-a5b27d617588/01e94223-bcb0-4043-8b10-a5b27d617588/",
+							tags: [],
+							shape: "polygon",
+							coords: "1197,754 1405,754 1405,781 1197,781",
+						}
+					]
+				},
+				{
+					title: "overview 1",
+					uuid: "76BA215F-7466-431D-8BFB-FEE48E900006",
+					tags: [],
+					image: "Contents/overview%201-76ba215f-7466-431d-8bfb-fee48e900006.png?nocache=744593444",
+					imageSize: { width: 1566.000000, height: 648.000000 },
+					thumbnail: "Contents/overview%201-76ba215f-7466-431d-8bfb-fee48e900006-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "https://en.wikipedia.org/wiki/Semantic_Web",
+							tags: [],
+							shape: "polygon",
+							coords: "1262,553 1490,553 1490,569 1262,569",
+						}
+					]
+				},
+				{
+					title: "overview 2",
+					uuid: "80966EE9-F5D4-4E0C-9DB7-CFBC17E822A5",
+					tags: [],
+					image: "Contents/overview%202-80966ee9-f5d4-4e0c-9db7-cfbc17e822a5.png?nocache=744593444",
+					imageSize: { width: 1566.000000, height: 640.000000 },
+					thumbnail: "Contents/overview%202-80966ee9-f5d4-4e0c-9db7-cfbc17e822a5-Thumb.png?nocache=744593444",
+					imagemap: [
+						{
+							href: "https://en.wikipedia.org/wiki/Semantic_Web",
+							tags: [],
+							shape: "polygon",
+							coords: "1262,553 1490,553 1490,569 1262,569",
+						}
+					]
+				}
+			]
+		}
+	]
+;
+
+function loadTOC(elementToAddTo, slidesAtLevel) {
+	if (!slidesAtLevel)
+		return;
+		
+	var listElement = document.createElement("ul");
+	
+	for (var slideIndex = 0; slideIndex < slidesAtLevel.length; ++slideIndex) {
+		var title = slidesAtLevel[slideIndex].title;
+		var thumbnail = slidesAtLevel[slideIndex].thumbnail;
+		var image = slidesAtLevel[slideIndex].image;
+		var childHierarchy = slidesAtLevel[slideIndex].childHierarchy;
+
+		var listItemElement = document.createElement("li");
+		if (image) {
+			slides.push(slidesAtLevel[slideIndex]);
+
+			var anchorElement = document.createElement("a");
+			anchorElement.setAttribute("href", "javascript:goToSlideAtIndex("+((slides.length) - 1)+");");
+			var imageElement = document.createElement("img");
+			imageElement.setAttribute("src", thumbnail);
+			anchorElement.appendChild(imageElement);
+			anchorElement.appendChild(document.createTextNode(title));
+			listItemElement.appendChild(anchorElement);
+		}
+		else {
+			var imageElement = document.createElement("img");
+			imageElement.setAttribute("src", thumbnail);
+			listItemElement.appendChild(imageElement);
+			listItemElement.appendChild(document.createTextNode(title));
+		}	
+		loadTOC(listItemElement, childHierarchy);
+		listElement.appendChild(listItemElement);
+	}
+	
+	elementToAddTo.appendChild(listElement);
+}
+
+function show(id) {
+	document.getElementById(id).style.visibility = "visible";
+}
+function hide(id) {
+	document.getElementById(id).style.visibility = "hidden";
+}
+
+function showNavigation() {
+	document.getElementById('tocIcon').style.opacity = 0.5;
+	document.getElementById('tocIcon').style.filter = "alpha(opacity=50)";
+	document.getElementById('previousIcon').style.opacity = 0.5;
+	document.getElementById('previousIcon').style.filter = "alpha(opacity=50)";
+	document.getElementById('nextIcon').style.opacity = 0.5;
+	document.getElementById('nextIcon').style.filter = "alpha(opacity=50)";
+}
+function hideNavigation() {
+	document.getElementById('tocIcon').style.opacity = 0;
+	document.getElementById('tocIcon').style.filter = "alpha(opacity=0)";
+	document.getElementById('previousIcon').style.opacity = 0;
+	document.getElementById('previousIcon').style.filter = "alpha(opacity=0)";
+	document.getElementById('nextIcon').style.opacity = 0;
+	document.getElementById('nextIcon').style.filter = "alpha(opacity=0)";
+}
+
+var showNavigationTimeout = null;
+
+function goToSlideAtIndex(slideIndex, silent) {
+	currentSlideIndex = slideIndex;
+	
+	document.getElementById("activeSlide").src = slides[slideIndex].image;
+	if (slides[slideIndex].imageSize) {
+		document.getElementById("activeSlide").width = slides[slideIndex].imageSize.width;
+		document.getElementById("activeSlide").height = slides[slideIndex].imageSize.height;
+	}
+
+	var title = slides[slideIndex].title;
+	window.document.title = projectTitle + " \u2014 " + title;
+	
+	var imagemap = slides[slideIndex].imagemap;
+	var mapElement = document.getElementById("activeSlideMap");
+	while (mapElement.firstChild) {
+		mapElement.removeChild(mapElement.firstChild);
+	}
+	if (imagemap) {
+		for (var imagemapIndex = 0; imagemapIndex < imagemap.length; ++imagemapIndex) {
+			var href = imagemap[imagemapIndex].href;
+			var shape = imagemap[imagemapIndex].shape;
+			var coords = imagemap[imagemapIndex].coords;
+			var areaElement = document.createElement("area");
+			areaElement.setAttribute("href", href);
+			areaElement.setAttribute("coords", coords);
+			areaElement.setAttribute("shape", shape);
+			mapElement.appendChild(areaElement);
+		}
+	}
+
+	if (currentSlideIndex == 0) {
+		hide('previousIcon');
+	}
+	else {
+		show('previousIcon');
+	}
+
+	if (currentSlideIndex+1 == slides.length) {
+		hide('nextIcon');
+	}
+	else {
+		show('nextIcon');
+	}
+
+	// kludge: force the hover color to go away on touch devices
+	if (isTouchDevice) {
+		document.getElementById('previousIcon').style.backgroundColor = "#fff";
+		document.getElementById('nextIcon').style.backgroundColor = "#fff";
+	}
+
+	if (!silent) {
+		if (history.pushState) {
+			if (slideIndex == 0)
+				history.pushState(null, document.title, window.location.pathname + window.location.search);
+			else
+				history.pushState(null, document.title, '#'+slideIndex);
+		}
+		else {
+			location.hash = '#'+slideIndex;
+		}
+	}
+	
+	clearTimeout(showNavigationTimeout);
+	showNavigation();
+	showNavigationTimeout = setTimeout('hideNavigation()', 3000);
+}
+function goToFirstSlide() {
+	goToSlideAtIndex(0);
+}
+function goToLastSlide() {
+	if (slides.length > 0) {
+		goToSlideAtIndex(slides.length - 1);
+	}
+}
+function goToPreviousSlide() {
+	if (currentSlideIndex > 0) {
+		goToSlideAtIndex(currentSlideIndex-1);
+	}
+}
+function goToNextSlide() {
+	if (currentSlideIndex+1 < slides.length) {
+		goToSlideAtIndex(currentSlideIndex+1);
+	}
+}
+function goToSlideWithUUID(uuid) {
+	for (var slideIndex = 0; slideIndex < slides.length; ++slideIndex) {
+		if (slides[slideIndex].uuid == uuid) {
+			goToSlideAtIndex(slideIndex);
+			break;
+		}
+	}
+}
+
+window.onpopstate = function(event) {
+	var indexFromHash = window.location.hash.replace('#', '');
+	if (indexFromHash)
+		currentSlideIndex = parseInt(indexFromHash);
+	else
+		currentSlideIndex = 0;
+	goToSlideAtIndex(currentSlideIndex, true);
+};
+
+window.onload = function () {
+	loadTOC(document.getElementById("toc"), slideHierarchy);
+
+	var indexFromHash = window.location.hash.replace('#', '');
+	if (indexFromHash)
+		currentSlideIndex = parseInt(indexFromHash);
+	goToSlideAtIndex(currentSlideIndex);
+	
+	var autoHideTOC = true;
+	if (isSafari && !isTouchDevice) // kludge: with Safari on the Mac we have to briefly show the TOC for TOC scrolling to work
+		autoHideTOC = false;
+	if (autoHideTOC)
+		hide('toc');
+
+	document.getElementById('tocIcon').onmouseover=function(){
+		show('toc');
+	};
+	document.getElementById('slide').onmouseover=function(){
+		hide('toc');
+	};
+	document.getElementById('previousIcon').onmousedown=function(){
+		goToPreviousSlide();
+	};
+	document.getElementById('nextIcon').onmousedown=function(){
+		goToNextSlide();
+	};
+
+	document.getElementById('slide').onmousemove=function(){
+		clearTimeout(showNavigationTimeout);
+		showNavigation();
+		showNavigationTimeout = setTimeout('hideNavigation()', 2000);
+	};
+	document.getElementById('navigation').onmousemove=function(){
+		clearTimeout(showNavigationTimeout);
+		showNavigation();
+	};
+	document.getElementById('navigation').onmouseout=function(){
+		clearTimeout(showNavigationTimeout);
+		hideNavigation();
+	};
+	
+	if (slides.length <= 1) {
+		hide('toc');
+		hide('tocIcon');
+		hide('previousIcon');
+		hide('nextIcon');
+	}
+
+	document.onkeydown = function(event) {
+		event = event || window.event;
+		if (event.keyCode == '37' || event.keyCode == '38') // left or up
+			goToPreviousSlide();
+	    else if (event.keyCode == '39' || event.keyCode == '40') // right or down
+			goToNextSlide();
+	};
+}
+</script> 
+</head> 
+<body>
+	<table id="slide">
+		<tr>
+			<td>
+				<img id="activeSlide" usemap="#activeSlideMap" />
+				<map id="activeSlideMap" name="activeSlideMap"></map>
+			</td>
+		</tr>
+	</table>
+	<div id="navigation">
+		<div id="tocIcon">&#9776;</div>
+		<div id="previousIcon">&#9650;</div>
+		<div id="nextIcon">&#9660;</div>
+	</div>
+	<div id="toc"></div>
+</body>
+</html>
